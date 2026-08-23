@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой первый сайт на Cloudflare Pages</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        .card {
+            background: rgba(255,255,255,0.2);
+            padding: 30px 50px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+        .badge {
+            display: inline-block;
+            background: #4CAF50;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 0.8em;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-top: 20px;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>🚀 Всё работает!</h1>
+        <p>Этот сайт успешно загружен на Cloudflare Pages</p>
+        <p style="font-size: 1.2em;">Через GitHub репозиторий</p>
+        <div class="badge">✅ Успешный деплой</div>
+        <div class="footer">
+            Сделано на HTML, CSS и JS
+        </div>
+    </div>
+    
+    <script>
+        // Простой JavaScript для проверки
+        console.log("Сайт загружен на Cloudflare Pages!");
+        document.querySelector('.badge').addEventListener('click', function() {
+            this.textContent = '🎉 Привет, мир!';
+            this.style.background = '#ff6b6b';
+        });
+    </script>
+</body>
+</html>
