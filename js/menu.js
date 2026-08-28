@@ -16,11 +16,6 @@
     const DEFAULT_LANGUAGE = 'en';
     
     // ========================================
-    // КЛЮЧ ДЛЯ ХРАНЕНИЯ СОСТОЯНИЯ РЕДИРЕКТА
-    // ========================================
-    const REDIRECT_DONE_KEY = 'mySiteRedirectDone';
-    
-    // ========================================
     // КОНФИГУРАЦИЯ СТРАНИЦ
     // ========================================
     const pagesConfig = [
@@ -50,7 +45,7 @@
                 tr: 'Yaz modası, ağırlıksız kumaşlarda ifade edilen bir hafiflik manifestosudu'
             }
         }
- 
+       
     ];
 
     // Названия языков для выпадающего списка
@@ -64,24 +59,6 @@
         ru: 'Русский',
         tr: 'Türkçe'
     };
-
-    // ---------- АВТООПРЕДЕЛЕНИЕ ЯЗЫКА БРАУЗЕРА ----------
-    function detectBrowserLanguage() {
-        const browserLang = navigator.language || navigator.userLanguage;
-        const langCode = browserLang.substring(0, 2).toLowerCase();
-        
-        if (AVAILABLE_LANGUAGES.includes(langCode)) {
-            return langCode;
-        }
-        
-        for (let lang of AVAILABLE_LANGUAGES) {
-            if (browserLang.toLowerCase().startsWith(lang)) {
-                return lang;
-            }
-        }
-        
-        return DEFAULT_LANGUAGE;
-    }
 
     // ---------- ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ----------
     
@@ -122,56 +99,6 @@
         const page = pagesConfig.find(p => p.id === pageId);
         if (!page) return pageId;
         return page.titles[lang] || page.titles[DEFAULT_LANGUAGE] || pageId;
-    }
-
-    // ---------- ПРОВЕРКА И ПЕРЕНАПРАВЛЕНИЕ НА ЯЗЫК БРАУЗЕРА ----------
-    function redirectToBrowserLanguage() {
-        // ============================================
-        // ПРОВЕРЯЕМ, БЫЛ ЛИ УЖЕ СДЕЛАН РЕДИРЕКТ
-        // ============================================
-        const redirectDone = sessionStorage.getItem(REDIRECT_DONE_KEY);
-        if (redirectDone === 'true') {
-            // Редирект уже был выполнен ранее в этой сессии
-            return false;
-        }
-
-        const path = window.location.pathname;
-        const fileName = path.split('/').pop() || 'index.html';
-        
-        // Проверяем, есть ли уже язык в URL
-        let hasLanguage = false;
-        for (let lang of AVAILABLE_LANGUAGES) {
-            if (fileName.includes('-' + lang + '.')) {
-                hasLanguage = true;
-                break;
-            }
-        }
-        
-        // Если язык уже указан в URL, запоминаем и выходим
-        if (hasLanguage) {
-            sessionStorage.setItem(REDIRECT_DONE_KEY, 'true');
-            return false;
-        }
-        
-        // Определяем язык браузера
-        const browserLang = detectBrowserLanguage();
-        const currentPage = getCurrentPage();
-        
-        // Если язык браузера не английский (или не совпадает с текущим)
-        if (browserLang !== DEFAULT_LANGUAGE) {
-            const newFileName = getFileName(currentPage, browserLang);
-            
-            if (fileName !== newFileName) {
-                // Запоминаем, что редирект выполнен
-                sessionStorage.setItem(REDIRECT_DONE_KEY, 'true');
-                window.location.href = newFileName;
-                return true;
-            }
-        }
-        
-        // Если редирект не нужен, просто запоминаем
-        sessionStorage.setItem(REDIRECT_DONE_KEY, 'true');
-        return false;
     }
 
     // ---------- ОБНОВЛЕНИЕ МОБИЛЬНОГО ВЫБОРА ЯЗЫКА ----------
@@ -309,18 +236,14 @@
     // ---------- ЗАПУСК ----------
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function() {
-            if (!redirectToBrowserLanguage()) {
-                buildMenu();
-                updatePageContent();
-                setupMobileLanguageSelector();
-            }
-        });
-    } else {
-        if (!redirectToBrowserLanguage()) {
             buildMenu();
             updatePageContent();
             setupMobileLanguageSelector();
-        }
+        });
+    } else {
+        buildMenu();
+        updatePageContent();
+        setupMobileLanguageSelector();
     }
 
     window.addEventListener('pageshow', function() {
