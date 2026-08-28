@@ -44,8 +44,46 @@
                 ru: 'Летняя мода — это манифест легкости, выраженный в невесомых тканях.',
                 tr: 'Yaz modası, ağırlıksız kumaşlarda ifade edilen bir hafiflik manifestosudu'
             }
+        },
+        {
+            id: 'about',
+            titles: {
+                de: 'Über uns',
+                en: 'About Us',
+                es: 'Sobre nosotros',
+                fr: 'À propos de nous',
+                it: 'Chi siamo',
+                ka: 'ჩვენს შესახებ',
+                ru: 'О нас',
+                tr: 'Hakkımızda'
+            }
+        },
+        {
+            id: 'services',
+            titles: {
+                de: 'Unsere Dienstleistungen',
+                en: 'Our Services',
+                es: 'Nuestros servicios',
+                fr: 'Nos services',
+                it: 'I nostri servizi',
+                ka: 'ჩვენი მომსახურება',
+                ru: 'Наши услуги',
+                tr: 'Hizmetlerimiz'
+            }
+        },
+        {
+            id: 'contacts',
+            titles: {
+                de: 'Kontakt',
+                en: 'Contacts',
+                es: 'Contactos',
+                fr: 'Contacts',
+                it: 'Contatti',
+                ka: 'კონტაქტები',
+                ru: 'Контакты',
+                tr: 'İletişim'
+            }
         }
-       
     ];
 
     // Названия языков для выпадающего списка
@@ -66,11 +104,17 @@
         const path = window.location.pathname;
         const fileName = path.split('/').pop() || 'index.html';
         
+        // ОТЛАДКА: выводим имя файла в консоль
+        console.log('🔍 Текущий файл:', fileName);
+        
         for (let lang of AVAILABLE_LANGUAGES) {
             if (fileName.includes('-' + lang + '.')) {
+                console.log('✅ Найден язык:', lang);
                 return lang;
             }
         }
+        
+        console.log('⚠️ Язык не найден, используем DEFAULT:', DEFAULT_LANGUAGE);
         return DEFAULT_LANGUAGE;
     }
 
@@ -123,6 +167,9 @@
 
         const currentLang = getCurrentLanguage();
         const currentPage = getCurrentPage();
+
+        console.log('📌 Текущий язык:', currentLang);
+        console.log('📌 Текущая страница:', currentPage);
 
         const menuContainer = document.getElementById('menuContainer');
         if (!menuContainer) {
@@ -178,6 +225,7 @@
                 const newLang = this.value;
                 const currentPageId = getCurrentPage();
                 let newFileName = getFileName(currentPageId, newLang);
+                console.log('🔄 Переключение языка на:', newLang, '→', newFileName);
                 window.location.href = newFileName;
             });
         }
@@ -188,6 +236,7 @@
                 const pageId = this.dataset.page;
                 const currentLang = getCurrentLanguage();
                 let fileName = getFileName(pageId, currentLang);
+                console.log('🔗 Переход на страницу:', pageId, '→', fileName);
                 window.location.href = fileName;
             });
         });
@@ -219,6 +268,7 @@
             const newLang = this.value;
             const currentPageId = getCurrentPage();
             let newFileName = getFileName(currentPageId, newLang);
+            console.log('📱 Мобильный выбор языка:', newLang, '→', newFileName);
             window.location.href = newFileName;
         });
     }
@@ -236,17 +286,20 @@
     // ---------- ЗАПУСК ----------
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 DOM загружен');
             buildMenu();
             updatePageContent();
             setupMobileLanguageSelector();
         });
     } else {
+        console.log('🚀 DOM уже загружен');
         buildMenu();
         updatePageContent();
         setupMobileLanguageSelector();
     }
 
     window.addEventListener('pageshow', function() {
+        console.log('📄 Страница показана');
         updatePageContent();
     });
 
