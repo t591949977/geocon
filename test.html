@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Тест ссылок</title>
+</head>
+<body>
+    <h1>Тестовая страница</h1>
+    
+    <p><a href="index.html">index.html</a></p>
+    <p><a href="index-de.html">index-de.html</a></p>
+    <p><a href="index-ru.html">index-ru.html</a></p>
+    <p><a href="index-es.html">index-es.html</a></p>
+    <p><a href="about.html">about.html</a></p>
+    <p><a href="about-de.html">about-de.html</a></p>
+    
+    <hr>
+    <p><strong>Текущий URL:</strong> <span id="currentUrl"></span></p>
+    <p><strong>Текущий файл:</strong> <span id="currentFile"></span></p>
+    
+    <script>
+        document.getElementById('currentUrl').textContent = window.location.href;
+        document.getElementById('currentFile').textContent = window.location.pathname.split('/').pop() || 'index.html';
+    </script>
+</body>
+</html>
