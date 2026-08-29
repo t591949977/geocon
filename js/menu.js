@@ -132,36 +132,48 @@
     // ГЛАВНОЕ ИСПРАВЛЕНИЕ: ОПРЕДЕЛЯЕМ ЯЗЫК
     // ДАЖЕ БЕЗ РАСШИРЕНИЯ .html
     // ============================================
-    function getCurrentLanguage() {
-        const fileName = getFileNameFromUrl();
-        
-        // 1. Проверяем с расширением .html (index-de.html)
-        for (let lang of AVAILABLE_LANGUAGES) {
-            if (fileName.includes('-' + lang + '.')) {
-                console.log('✅ Найден язык (с .html):', lang);
-                return lang;
-            }
+function getCurrentLanguage() {
+    const fileName = getFileNameFromUrl();
+    
+    // 1. Проверяем с расширением .html (index-de.html)
+    for (let lang of AVAILABLE_LANGUAGES) {
+        if (fileName.includes('-' + lang + '.')) {
+            console.log('✅ Найден язык (с .html):', lang);
+            return lang;
         }
-        
-        // 2. Проверяем БЕЗ расширения (index-de)
-        for (let lang of AVAILABLE_LANGUAGES) {
-            if (fileName.endsWith('-' + lang)) {
-                console.log('✅ Найден язык (без .html):', lang);
-                return lang;
-            }
-        }
-        
-        // 3. Проверяем параметр lang в URL (?lang=de)
-        const urlParams = new URLSearchParams(window.location.search);
-        const langParam = urlParams.get('lang');
-        if (langParam && AVAILABLE_LANGUAGES.includes(langParam)) {
-            console.log('✅ Найден язык в параметре URL:', langParam);
-            return langParam;
-        }
-        
-        console.log('⚠️ Язык не найден, используем DEFAULT:', DEFAULT_LANGUAGE);
-        return DEFAULT_LANGUAGE;
     }
+    
+    // 2. Проверяем БЕЗ расширения (index-de)
+    for (let lang of AVAILABLE_LANGUAGES) {
+        if (fileName.endsWith('-' + lang)) {
+            console.log('✅ Найден язык (без .html):', lang);
+            return lang;
+        }
+    }
+    
+    // === НОВАЯ ПРОВЕРКА ===
+    // 3. Проверяем, если файл вообще без расширения (просто "index-de")
+    // Или если в пути есть /index-de (без .html)
+    const pathParts = window.location.pathname.split('/');
+    const lastPart = pathParts[pathParts.length - 1];
+    for (let lang of AVAILABLE_LANGUAGES) {
+        if (lastPart.endsWith('-' + lang)) {
+            console.log('✅ Найден язык (из пути, без расширения):', lang);
+            return lang;
+        }
+    }
+    
+    // 4. Проверяем параметр lang в URL (?lang=de)
+    const urlParams = new URLSearchParams(window.location.search);
+    const langParam = urlParams.get('lang');
+    if (langParam && AVAILABLE_LANGUAGES.includes(langParam)) {
+        console.log('✅ Найден язык в параметре URL:', langParam);
+        return langParam;
+    }
+    
+    console.log('⚠️ Язык не найден, используем DEFAULT:', DEFAULT_LANGUAGE);
+    return DEFAULT_LANGUAGE;
+}
 
     function getCurrentPage() {
         const fileName = getFileNameFromUrl();
