@@ -16,17 +16,6 @@
     const DEFAULT_LANGUAGE = 'en';
     
     // ========================================
-    // ОТЛАДКА - ВЫВОДИМ ИНФОРМАЦИЮ О ПУТЯХ
-    // ========================================
-    function debugInfo() {
-        console.log('=== ОТЛАДКА ПУТЕЙ ===');
-        console.log('window.location.href:', window.location.href);
-        console.log('window.location.pathname:', window.location.pathname);
-        console.log('window.location.search:', window.location.search);
-        console.log('=======================');
-    }
-
-    // ========================================
     // КОНФИГУРАЦИЯ СТРАНИЦ
     // ========================================
     const pagesConfig = [
@@ -56,7 +45,6 @@
                 tr: 'Yaz modası, ağırlıksız kumaşlarda ifade edilen bir hafiflik manifestosudu'
             }
         }
-       
     ];
 
     // Названия языков для выпадающего списка
@@ -86,56 +74,47 @@
             fileName = 'index.html';
         }
         
-        console.log('📄 Имя файла из URL:', fileName);
         return fileName;
     }
 
     // ============================================
-    // ГЛАВНОЕ ИСПРАВЛЕНИЕ: ОПРЕДЕЛЯЕМ ЯЗЫК
-    // ДАЖЕ БЕЗ РАСШИРЕНИЯ .html
+    // ОПРЕДЕЛЕНИЕ ЯЗЫКА ИЗ URL
     // ============================================
-function getCurrentLanguage() {
-    const fileName = getFileNameFromUrl();
-    
-    // 1. Проверяем с расширением .html (index-de.html)
-    for (let lang of AVAILABLE_LANGUAGES) {
-        if (fileName.includes('-' + lang + '.')) {
-            console.log('✅ Найден язык (с .html):', lang);
-            return lang;
+    function getCurrentLanguage() {
+        const fileName = getFileNameFromUrl();
+        
+        // 1. Проверяем с расширением .html (index-de.html)
+        for (let lang of AVAILABLE_LANGUAGES) {
+            if (fileName.includes('-' + lang + '.')) {
+                return lang;
+            }
         }
-    }
-    
-    // 2. Проверяем БЕЗ расширения (index-de)
-    for (let lang of AVAILABLE_LANGUAGES) {
-        if (fileName.endsWith('-' + lang)) {
-            console.log('✅ Найден язык (без .html):', lang);
-            return lang;
+        
+        // 2. Проверяем БЕЗ расширения (index-de)
+        for (let lang of AVAILABLE_LANGUAGES) {
+            if (fileName.endsWith('-' + lang)) {
+                return lang;
+            }
         }
-    }
-    
-    // === НОВАЯ ПРОВЕРКА ===
-    // 3. Проверяем, если файл вообще без расширения (просто "index-de")
-    // Или если в пути есть /index-de (без .html)
-    const pathParts = window.location.pathname.split('/');
-    const lastPart = pathParts[pathParts.length - 1];
-    for (let lang of AVAILABLE_LANGUAGES) {
-        if (lastPart.endsWith('-' + lang)) {
-            console.log('✅ Найден язык (из пути, без расширения):', lang);
-            return lang;
+        
+        // 3. Проверяем из пути (без .html)
+        const pathParts = window.location.pathname.split('/');
+        const lastPart = pathParts[pathParts.length - 1];
+        for (let lang of AVAILABLE_LANGUAGES) {
+            if (lastPart.endsWith('-' + lang)) {
+                return lang;
+            }
         }
+        
+        // 4. Проверяем параметр lang в URL (?lang=de)
+        const urlParams = new URLSearchParams(window.location.search);
+        const langParam = urlParams.get('lang');
+        if (langParam && AVAILABLE_LANGUAGES.includes(langParam)) {
+            return langParam;
+        }
+        
+        return DEFAULT_LANGUAGE;
     }
-    
-    // 4. Проверяем параметр lang в URL (?lang=de)
-    const urlParams = new URLSearchParams(window.location.search);
-    const langParam = urlParams.get('lang');
-    if (langParam && AVAILABLE_LANGUAGES.includes(langParam)) {
-        console.log('✅ Найден язык в параметре URL:', langParam);
-        return langParam;
-    }
-    
-    console.log('⚠️ Язык не найден, используем DEFAULT:', DEFAULT_LANGUAGE);
-    return DEFAULT_LANGUAGE;
-}
 
     function getCurrentPage() {
         const fileName = getFileNameFromUrl();
@@ -169,7 +148,6 @@ function getCurrentLanguage() {
         if (!mobileSelect) return;
         
         const currentLang = getCurrentLanguage();
-        console.log('📱 Мобильный селектор установлен на:', currentLang);
         mobileSelect.value = currentLang;
     }
 
@@ -178,7 +156,6 @@ function getCurrentLanguage() {
 
     function buildMenu() {
         if (menuBuilt) {
-            console.log('⚠️ Меню уже построено, пропускаем');
             return;
         }
 
@@ -194,8 +171,6 @@ function getCurrentLanguage() {
 
         const currentLang = getCurrentLanguage();
         const currentPage = getCurrentPage();
-
-        console.log('📌 Построение меню: язык=' + currentLang + ', страница=' + currentPage);
 
         const menuContainer = document.getElementById('menuContainer');
         if (!menuContainer) {
@@ -251,7 +226,6 @@ function getCurrentLanguage() {
                 const newLang = this.value;
                 const currentPageId = getCurrentPage();
                 let newFileName = getFileName(currentPageId, newLang);
-                console.log('🔄 Переключение языка: ' + newLang + ' → ' + newFileName);
                 window.location.href = newFileName;
             });
         }
@@ -262,7 +236,6 @@ function getCurrentLanguage() {
                 const pageId = this.dataset.page;
                 const currentLang = getCurrentLanguage();
                 let fileName = getFileName(pageId, currentLang);
-                console.log('🔗 Переход на страницу: ' + pageId + ' → ' + fileName);
                 window.location.href = fileName;
             });
         });
@@ -274,8 +247,6 @@ function getCurrentLanguage() {
     function updatePageContent() {
         const currentLang = getCurrentLanguage();
         const currentPage = getCurrentPage();
-
-        console.log('📝 Обновление контента: язык=' + currentLang + ', страница=' + currentPage);
 
         const pageTitle = document.getElementById('pageTitle');
         if (pageTitle) {
@@ -298,7 +269,6 @@ function getCurrentLanguage() {
             const newLang = this.value;
             const currentPageId = getCurrentPage();
             let newFileName = getFileName(currentPageId, newLang);
-            console.log('📱 Мобильный выбор языка: ' + newLang + ' → ' + newFileName);
             window.location.href = newFileName;
         });
     }
@@ -315,24 +285,19 @@ function getCurrentLanguage() {
     });
 
     // ---------- ЗАПУСК ----------
-    console.log('🚀 Запуск menu.js');
-
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function() {
-            debugInfo();
             buildMenu();
             updatePageContent();
             setupMobileLanguageSelector();
         });
     } else {
-        debugInfo();
         buildMenu();
         updatePageContent();
         setupMobileLanguageSelector();
     }
 
     window.addEventListener('pageshow', function() {
-        console.log('📄 Страница показана');
         updatePageContent();
     });
 
