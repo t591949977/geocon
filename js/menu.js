@@ -16,6 +16,17 @@
     const DEFAULT_LANGUAGE = 'en';
     
     // ========================================
+    // ОТЛАДКА - ВЫВОДИМ ИНФОРМАЦИЮ О ПУТЯХ
+    // ========================================
+    function debugInfo() {
+        console.log('=== ОТЛАДКА ПУТЕЙ ===');
+        console.log('window.location.href:', window.location.href);
+        console.log('window.location.pathname:', window.location.pathname);
+        console.log('window.location.search:', window.location.search);
+        console.log('=======================');
+    }
+
+    // ========================================
     // КОНФИГУРАЦИЯ СТРАНИЦ
     // ========================================
     const pagesConfig = [
@@ -100,18 +111,46 @@
 
     // ---------- ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ----------
     
+    // ПОЛУЧАЕМ ИМЯ ФАЙЛА ИЗ URL (РАБОТАЕТ ВСЕГДА)
+    function getFileNameFromUrl() {
+        // Получаем полный путь
+        let fullPath = window.location.pathname;
+        
+        // Если путь заканчивается на /, значит это папка - добавляем index.html
+        if (fullPath.endsWith('/')) {
+            fullPath += 'index.html';
+        }
+        
+        // Извлекаем имя файла
+        let fileName = fullPath.split('/').pop();
+        
+        // Если файл не найден или пустой - используем index.html
+        if (!fileName || fileName === '') {
+            fileName = 'index.html';
+        }
+        
+        console.log('📄 Имя файла из URL:', fileName);
+        return fileName;
+    }
+
     function getCurrentLanguage() {
-        const path = window.location.pathname;
-        const fileName = path.split('/').pop() || 'index.html';
+        const fileName = getFileNameFromUrl();
         
-        // ОТЛАДКА: выводим имя файла в консоль
-        console.log('🔍 Текущий файл:', fileName);
-        
+        // Проверяем все языки
         for (let lang of AVAILABLE_LANGUAGES) {
+            // Проверяем: index-de.html, about-de.html, index2-de.html
             if (fileName.includes('-' + lang + '.')) {
-                console.log('✅ Найден язык:', lang);
+                console.log('✅ Найден язык в имени файла:', lang);
                 return lang;
             }
+        }
+        
+        // Проверяем параметр lang в URL (если есть)
+        const urlParams = new URLSearchParams(window.location.search);
+        const langParam = urlParams.get('lang');
+        if (langParam && AVAILABLE_LANGUAGES.includes(langParam)) {
+            console.log('✅ Найден язык в параметре URL:', langParam);
+            return langParam;
         }
         
         console.log('⚠️ Язык не найден, используем DEFAULT:', DEFAULT_LANGUAGE);
@@ -119,8 +158,7 @@
     }
 
     function getCurrentPage() {
-        const path = window.location.pathname;
-        const fileName = path.split('/').pop() || 'index.html';
+        const fileName = getFileNameFromUrl();
         
         let baseName = fileName.replace(/\.html$/, '');
         for (let lang of AVAILABLE_LANGUAGES) {
@@ -151,29 +189,38 @@
         if (!mobileSelect) return;
         
         const currentLang = getCurrentLanguage();
+        console.log('📱 Мобильный селектор установлен на:', currentLang);
         mobileSelect.value = currentLang;
     }
 
     // ---------- СОЗДАНИЕ ДЕСКТОПНОГО МЕНЮ ----------
+    let menuBuilt = false;
+
     function buildMenu() {
+        // Защита от двойного вызова
+        if (menuBuilt) {
+            console.log('⚠️ Меню уже построено, пропускаем');
+            return;
+        }
+
         if (isMobile()) {
             const menuContainer = document.getElementById('menuContainer');
             if (menuContainer) {
                 menuContainer.innerHTML = '';
             }
             updateMobileLanguageSelector();
+            menuBuilt = true;
             return;
         }
 
         const currentLang = getCurrentLanguage();
         const currentPage = getCurrentPage();
 
-        console.log('📌 Текущий язык:', currentLang);
-        console.log('📌 Текущая страница:', currentPage);
+        console.log('📌 Построение меню: язык=' + currentLang + ', страница=' + currentPage);
 
         const menuContainer = document.getElementById('menuContainer');
         if (!menuContainer) {
-            console.error('Контейнер #menuContainer не найден!');
+            console.error('❌ Контейнер #menuContainer не найден!');
             return;
         }
 
@@ -225,7 +272,7 @@
                 const newLang = this.value;
                 const currentPageId = getCurrentPage();
                 let newFileName = getFileName(currentPageId, newLang);
-                console.log('🔄 Переключение языка на:', newLang, '→', newFileName);
+                console.log('🔄 Переключение языка: ' + newLang + ' → ' + newFileName);
                 window.location.href = newFileName;
             });
         }
@@ -236,16 +283,20 @@
                 const pageId = this.dataset.page;
                 const currentLang = getCurrentLanguage();
                 let fileName = getFileName(pageId, currentLang);
-                console.log('🔗 Переход на страницу:', pageId, '→', fileName);
+                console.log('🔗 Переход на страницу: ' + pageId + ' → ' + fileName);
                 window.location.href = fileName;
             });
         });
+
+        menuBuilt = true;
     }
 
     // ---------- ОБНОВЛЕНИЕ КОНТЕНТА ----------
     function updatePageContent() {
         const currentLang = getCurrentLanguage();
         const currentPage = getCurrentPage();
+
+        console.log('📝 Обновление контента: язык=' + currentLang + ', страница=' + currentPage);
 
         const pageTitle = document.getElementById('pageTitle');
         if (pageTitle) {
@@ -268,7 +319,7 @@
             const newLang = this.value;
             const currentPageId = getCurrentPage();
             let newFileName = getFileName(currentPageId, newLang);
-            console.log('📱 Мобильный выбор языка:', newLang, '→', newFileName);
+            console.log('📱 Мобильный выбор языка: ' + newLang + ' → ' + newFileName);
             window.location.href = newFileName;
         });
     }
@@ -278,21 +329,25 @@
     window.addEventListener('resize', function() {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(function() {
+            // При изменении размера сбрасываем флаг, чтобы перестроить меню
+            menuBuilt = false;
             buildMenu();
             updatePageContent();
         }, 250);
     });
 
     // ---------- ЗАПУСК ----------
+    console.log('🚀 Запуск menu.js');
+
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('🚀 DOM загружен');
+            debugInfo();
             buildMenu();
             updatePageContent();
             setupMobileLanguageSelector();
         });
     } else {
-        console.log('🚀 DOM уже загружен');
+        debugInfo();
         buildMenu();
         updatePageContent();
         setupMobileLanguageSelector();
@@ -300,6 +355,7 @@
 
     window.addEventListener('pageshow', function() {
         console.log('📄 Страница показана');
+        // Не перестраиваем меню, только обновляем контент
         updatePageContent();
     });
 
