@@ -111,20 +111,15 @@
 
     // ---------- ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ----------
     
-    // ПОЛУЧАЕМ ИМЯ ФАЙЛА ИЗ URL (РАБОТАЕТ ВСЕГДА)
     function getFileNameFromUrl() {
-        // Получаем полный путь
         let fullPath = window.location.pathname;
         
-        // Если путь заканчивается на /, значит это папка - добавляем index.html
         if (fullPath.endsWith('/')) {
             fullPath += 'index.html';
         }
         
-        // Извлекаем имя файла
         let fileName = fullPath.split('/').pop();
         
-        // Если файл не найден или пустой - используем index.html
         if (!fileName || fileName === '') {
             fileName = 'index.html';
         }
@@ -133,19 +128,30 @@
         return fileName;
     }
 
+    // ============================================
+    // ГЛАВНОЕ ИСПРАВЛЕНИЕ: ОПРЕДЕЛЯЕМ ЯЗЫК
+    // ДАЖЕ БЕЗ РАСШИРЕНИЯ .html
+    // ============================================
     function getCurrentLanguage() {
         const fileName = getFileNameFromUrl();
         
-        // Проверяем все языки
+        // 1. Проверяем с расширением .html (index-de.html)
         for (let lang of AVAILABLE_LANGUAGES) {
-            // Проверяем: index-de.html, about-de.html, index2-de.html
             if (fileName.includes('-' + lang + '.')) {
-                console.log('✅ Найден язык в имени файла:', lang);
+                console.log('✅ Найден язык (с .html):', lang);
                 return lang;
             }
         }
         
-        // Проверяем параметр lang в URL (если есть)
+        // 2. Проверяем БЕЗ расширения (index-de)
+        for (let lang of AVAILABLE_LANGUAGES) {
+            if (fileName.endsWith('-' + lang)) {
+                console.log('✅ Найден язык (без .html):', lang);
+                return lang;
+            }
+        }
+        
+        // 3. Проверяем параметр lang в URL (?lang=de)
         const urlParams = new URLSearchParams(window.location.search);
         const langParam = urlParams.get('lang');
         if (langParam && AVAILABLE_LANGUAGES.includes(langParam)) {
@@ -197,7 +203,6 @@
     let menuBuilt = false;
 
     function buildMenu() {
-        // Защита от двойного вызова
         if (menuBuilt) {
             console.log('⚠️ Меню уже построено, пропускаем');
             return;
@@ -329,7 +334,6 @@
     window.addEventListener('resize', function() {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(function() {
-            // При изменении размера сбрасываем флаг, чтобы перестроить меню
             menuBuilt = false;
             buildMenu();
             updatePageContent();
@@ -355,7 +359,6 @@
 
     window.addEventListener('pageshow', function() {
         console.log('📄 Страница показана');
-        // Не перестраиваем меню, только обновляем контент
         updatePageContent();
     });
 
