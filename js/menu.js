@@ -55,46 +55,8 @@
                 ru: 'Летняя мода — это манифест легкости, выраженный в невесомых тканях.',
                 tr: 'Yaz modası, ağırlıksız kumaşlarda ifade edilen bir hafiflik manifestosudu'
             }
-        },
-        {
-            id: 'about',
-            titles: {
-                de: 'Über uns',
-                en: 'About Us',
-                es: 'Sobre nosotros',
-                fr: 'À propos de nous',
-                it: 'Chi siamo',
-                ka: 'ჩვენს შესახებ',
-                ru: 'О нас',
-                tr: 'Hakkımızda'
-            }
-        },
-        {
-            id: 'services',
-            titles: {
-                de: 'Unsere Dienstleistungen',
-                en: 'Our Services',
-                es: 'Nuestros servicios',
-                fr: 'Nos services',
-                it: 'I nostri servizi',
-                ka: 'ჩვენი მომსახურება',
-                ru: 'Наши услуги',
-                tr: 'Hizmetlerimiz'
-            }
-        },
-        {
-            id: 'contacts',
-            titles: {
-                de: 'Kontakt',
-                en: 'Contacts',
-                es: 'Contactos',
-                fr: 'Contacts',
-                it: 'Contatti',
-                ka: 'კონტაქტები',
-                ru: 'Контакты',
-                tr: 'İletişim'
-            }
         }
+       
     ];
 
     // Названия языков для выпадающего списка
