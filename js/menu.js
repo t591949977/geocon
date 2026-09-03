@@ -6,21 +6,42 @@
 (function() {
     'use strict';
 
-    // ---------- ПРОВЕРКА НА МОБИЛЬНОЕ УСТРОЙСТВО ----------
+    // ============================================
+    // ОДИН ИСТОЧНИК ПРАВДЫ ДЛЯ МОБИЛЬНОСТИ
+    // СИНХРОНИЗИРОВАН С CSS (768px)
+    // ============================================
     function isMobile() {
         return window.innerWidth <= 768;
+    }
+
+    // ============================================
+    // ФУНКЦИЯ ДЛЯ ОТСЛЕЖИВАНИЯ ИЗМЕНЕНИЯ ШИРИНЫ
+    // ============================================
+    function checkWidthAndRebuild() {
+        const wasMobile = window._isMobile;
+        const nowMobile = isMobile();
+        
+        if (wasMobile !== nowMobile) {
+            window._isMobile = nowMobile;
+            menuBuilt = false;
+            buildMenu();
+            updatePageContent();
+        }
     }
 
     // ---------- НАСТРОЙКИ ----------
     const AVAILABLE_LANGUAGES = ['de', 'en', 'es', 'fr', 'it', 'ka', 'ru', 'tr'];
     const DEFAULT_LANGUAGE = 'en';
     
+    // БАЗОВОЕ ИМЯ СТРАНИЦЫ (без расширения и без языка)
+    const BASE_PAGE_ID = 'index4';
+    
     // ========================================
     // КОНФИГУРАЦИЯ СТРАНИЦ
     // ========================================
     const pagesConfig = [
         {
-            id: 'index',
+            id: 'index4',
             titles: {
                 de: 'Die Saison der strengen Mäntel, voluminösen Schals und strukturierten Strickwaren.',
                 en: 'The season of tailored coats, oversized scarves, and textured knitwear',
@@ -33,7 +54,7 @@
             }
         },
         {
-            id: 'index2',
+            id: 'index3',
             titles: {
                 de: 'Sommer mode ist ein Manifest der Leichtigkeit, ausgedrückt in schwerelosen Stoffen.',
                 en: 'Summer fashion is a manifesto of lightness, expressed in weightless fabrics.',
@@ -42,6 +63,19 @@
                 it: 'La moda estiva è un manifesto di leggerezza, espresso in tessuti senza peso.',
                 ka: 'ზაფხულის მოდა არის სიმსუბუქის მანიფესტი, გამოხატული უწონო ქსოვილებში.',
                 ru: 'Летняя мода — это манифест легкости, выраженный в невесомых тканях.',
+                tr: 'Yaz modası, ağırlıksız kumaşlarda ifade edilen bir hafiflik manifestosudu'
+            }
+        },
+        {
+            id: 'index2',
+            titles: {
+                de: 'Sommer mode ist ein Manifest der Leichtigkeit, ausgedrückt in schwerelosen Stoffen.',
+                en: 'Summer fashion is a manifesto of lightness, expressed in weightless fabrics.',
+                es: 'La moda veraniega es un manifiesto de ligereza, expresado en tejidos ingrávidos.',
+                fr: "La mode estivale est un manifeste de légèreté, exprimé dans des tissus légers comme l'air.",
+                it: 'La moda estiva è un manifesto di leggerezza, espresso in tessuti senza peso.',
+                ka: 'ზაფხულის მოდა არის სიმსუბუქის მანიფესტი, გამოხატული უწონო ქსოვილებში.',
+                ru: 'Секреты стильного лета: как одежда меняет наше настроение',
                 tr: 'Yaz modası, ağırlıksız kumaşlarda ifade edilen bir hafiflik manifestosudu'
             }
         }
@@ -59,8 +93,9 @@
         tr: 'Türkçe'
     };
 
-    // ---------- ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ----------
-    
+    // ============================================
+    // ФУНКЦИЯ ПОЛУЧЕНИЯ ИМЕНИ ФАЙЛА ИЗ URL
+    // ============================================
     function getFileNameFromUrl() {
         let fullPath = window.location.pathname;
         
@@ -74,30 +109,36 @@
             fileName = 'index.html';
         }
         
+        // Если это index.html → заменяем на index4-en.html
+        if (fileName === 'index.html') {
+            console.log('🔄 Обнаружен index.html → заменяем на index4-en.html');
+            fileName = 'index4-en.html';
+        }
+        
         return fileName;
     }
 
     // ============================================
-    // ОПРЕДЕЛЕНИЕ ЯЗЫКА ИЗ URL
+    // ОПРЕДЕЛЕНИЕ ТЕКУЩЕГО ЯЗЫКА
     // ============================================
     function getCurrentLanguage() {
         const fileName = getFileNameFromUrl();
         
-        // 1. Проверяем с расширением .html (index-de.html)
+        // 1. Проверяем стандартный формат: index4-en.html
         for (let lang of AVAILABLE_LANGUAGES) {
             if (fileName.includes('-' + lang + '.')) {
                 return lang;
             }
         }
         
-        // 2. Проверяем БЕЗ расширения (index-de)
+        // 2. Проверяем без расширения: index4-en
         for (let lang of AVAILABLE_LANGUAGES) {
             if (fileName.endsWith('-' + lang)) {
                 return lang;
             }
         }
         
-        // 3. Проверяем из пути (без .html)
+        // 3. Проверяем последнюю часть пути
         const pathParts = window.location.pathname.split('/');
         const lastPart = pathParts[pathParts.length - 1];
         for (let lang of AVAILABLE_LANGUAGES) {
@@ -113,9 +154,13 @@
             return langParam;
         }
         
+        // 5. Если ничего не найдено — язык по умолчанию
         return DEFAULT_LANGUAGE;
     }
 
+    // ============================================
+    // ОПРЕДЕЛЕНИЕ ТЕКУЩЕЙ СТРАНИЦЫ
+    // ============================================
     function getCurrentPage() {
         const fileName = getFileNameFromUrl();
         
@@ -129,10 +174,19 @@
         return baseName;
     }
 
+    // ============================================
+    // ПОЛУЧЕНИЕ ИМЕНИ ФАЙЛА ПО ID СТРАНИЦЫ И ЯЗЫКУ
+    // ============================================
     function getFileName(pageId, lang) {
-        if (lang === DEFAULT_LANGUAGE) {
-            return pageId + '.html';
+        // Если это базовая страница (index4) и английский → index-en.html
+        if (pageId === BASE_PAGE_ID && lang === DEFAULT_LANGUAGE) {
+            return 'index4-en.html';
         }
+        // Если это базовая страница (index4) и НЕ английский → index4-de.html
+        if (pageId === BASE_PAGE_ID) {
+            return pageId + '-' + lang + '.html';
+        }
+        // Для всех остальных страниц — добавляем язык
         return pageId + '-' + lang + '.html';
     }
 
@@ -159,7 +213,9 @@
             return;
         }
 
-        if (isMobile()) {
+        const mobile = isMobile();
+
+        if (mobile) {
             const menuContainer = document.getElementById('menuContainer');
             if (menuContainer) {
                 menuContainer.innerHTML = '';
@@ -198,14 +254,12 @@
                 <div class="nav-buttons" id="navButtons">
         `;
 
-        pagesConfig.forEach((page, index) => {
+        pagesConfig.forEach((page) => {
             const pageTitle = getPageTitle(page.id, currentLang);
             const isActive = page.id === currentPage ? 'active' : '';
-            const number = (index + 1).toString().padStart(2, '0');
             
             menuHTML += `
                 <button class="nav-btn ${isActive}" data-page="${page.id}">
-                    <span class="btn-number">${number}</span>
                     <span class="btn-text">${pageTitle}</span>
                 </button>
             `;
@@ -278,13 +332,13 @@
     window.addEventListener('resize', function() {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(function() {
-            menuBuilt = false;
-            buildMenu();
-            updatePageContent();
-        }, 250);
+            checkWidthAndRebuild();
+        }, 150);
     });
 
     // ---------- ЗАПУСК ----------
+    window._isMobile = isMobile();
+
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function() {
             buildMenu();

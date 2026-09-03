@@ -14,25 +14,30 @@ html, body {
 }
 
 /* ============================================
-   ВЕРТИКАЛЬНОЕ МЕНЮ (СВЕТЛАЯ ТЕМА)
+   ГЛАВНЫЙ КОНТЕЙНЕР — РАСТЯГИВАЕТСЯ НА ВСЮ ВЫСОТУ
+   ============================================ */
+body {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ============================================
+   ВЕРТИКАЛЬНОЕ МЕНЮ — РАСТЯГИВАЕТСЯ
    ============================================ */
 .vertical-menu {
     width: 280px;
-    min-height: 100vh;
     background: #e8e8e8;
-    padding: 20px 20px 20px 20px;  /* Уменьшены отступы */
+    padding: 20px 20px 20px 20px;
     display: flex;
     flex-direction: column;
     box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
     flex-shrink: 0;
-    height: 100vh;  /* ← ФИКСИРОВАННАЯ ВЫСОТА = ВЫСОТЕ ЭКРАНА */
+    /* Убираем height: 100vh — теперь растягивается через flex */
 }
 
 .language-selector {
-    margin-bottom: 15px;  /* Уменьшен отступ */
-    flex-shrink: 0;  /* Не сжимается */
+    margin-bottom: 15px;
+    flex-shrink: 0;
 }
 
 .language-selector select {
@@ -71,7 +76,7 @@ html, body {
 }
 
 /* ============================================
-   КНОПКИ НАВИГАЦИИ - ГЛАВНЫЙ БЛОК
+   КНОПКИ НАВИГАЦИИ
    ============================================ */
 .nav-buttons {
     display: flex;
@@ -83,7 +88,6 @@ html, body {
     padding-right: 4px;
 }
 
-/* Стили для полосы прокрутки */
 .nav-buttons::-webkit-scrollbar {
     width: 6px;
 }
@@ -103,7 +107,7 @@ html, body {
 }
 
 /* ============================================
-   КНОПКИ
+   КНОПКИ (БЕЗ НОМЕРОВ)
    ============================================ */
 .nav-btn {
     padding: 12px 16px;
@@ -134,24 +138,12 @@ html, body {
     line-height: 1.4;
 }
 
-.nav-btn .btn-number {
-    display: inline-block;
-    min-width: 28px;
-    font-size: 12px;
-    color: rgba(0,0,0,0.25);
-    margin-right: 8px;
-    font-weight: bold;
-}
-
 .nav-btn:hover {
     background: rgba(184, 168, 138, 0.2);
     color: #333333;
     transform: translateX(5px);
 }
 
-/* ============================================
-   АКТИВНАЯ КНОПКА
-   ============================================ */
 .nav-btn.active {
     background: #c8c8c8 !important;
     color: #222222 !important;
@@ -168,7 +160,7 @@ html, body {
 }
 
 /* ============================================
-   МОБИЛЬНАЯ ВЕРСИЯ
+   МОБИЛЬНАЯ ВЕРСИЯ - ВЫБОР ЯЗЫКА
    ============================================ */
 .mobile-language-selector {
     display: none;
@@ -221,13 +213,8 @@ html, body {
 }
 
 /* ============================================
-   ОСНОВНОЙ КОНТЕНТ
+   ОСНОВНОЙ КОНТЕНТ — РАСТЯГИВАЕТСЯ
    ============================================ */
-body {
-    display: flex;
-    min-height: 100vh;
-}
-
 .main-content {
     flex: 1;
     padding: 30px 40px 40px 40px;
@@ -245,22 +232,53 @@ body {
     flex-shrink: 0;
 }
 
-.leftimg {
-    float:left;
-    margin: 7px 7px 7px 0;
-}
-.rightimg  {
-    float: right;
-    margin: 7px 0 7px 7px;
+/* ============================================
+   КЛАССЫ ДЛЯ КАРТИНОК
+   ============================================ */
+.img-left {
+    float: left;
+    margin: 7px 15px 7px 0;
+    max-width: 100%;
+    height: auto;
 }
 
+.img-right {
+    float: right;
+    margin: 7px 0 7px 15px;
+    max-width: 100%;
+    height: auto;
+}
+
+.img-center {
+    display: block;
+    margin: 10px auto;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    border: 5px solid #CCC;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+
+.text-center {
+    text-align: center;      /* Выравнивание по центру */
+    font-size: 18px;         /* Размер шрифта (можно в px, rem, em) */
+    font-weight: bold;       /* Жирность (или числом, например, 700) */
+}
+
+/* ============================================
+   КОНТЕЙНЕР С КОЛОНКАМИ
+   ============================================ */
 .columns-container {
     flex: 1;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
     min-height: 0;
-    height: calc(100vh - 120px);
 }
 
 .column-card {
@@ -285,16 +303,19 @@ body {
 }
 
 .column-scroll {
-    flex: 1;
-    overflow-y: auto;
-    min-height: 0;
-    padding-right: 4px;
+	flex: 1;
+	overflow-y: auto;
+	min-height: 0;
+	padding-right: 4px;
+	color: #555657;
 }
 
 .column-table {
     width: 100%;
     border-collapse: collapse;
     font-size: 14px;
+    text-align: justify;
+    border: 1px solid #f0f0f0; /* ширина 2px, сплошная (solid), цвет темно-серый */
 }
 
 .column-table td {
@@ -332,16 +353,26 @@ body {
 /* ============================================
    АДАПТИВНОСТЬ
    ============================================ */
-@media (max-width: 1200px) {
+
+/* 3 колонки — по умолчанию */
+
+/* 2 колонки (769–1100px) */
+@media (max-width: 1100px) and (min-width: 769px) {
     .columns-container {
         grid-template-columns: 1fr 1fr;
-        height: calc(100vh - 120px);
     }
-    .column-card:last-child {
-        grid-column: span 2;
+    .column-card:nth-child(3) {
+        display: none !important;
+    }
+    .vertical-menu {
+        display: flex !important;
+    }
+    .mobile-language-selector {
+        display: none !important;
     }
 }
 
+/* 1 колонка (≤ 768px) */
 @media (max-width: 768px) {
     .vertical-menu {
         display: none !important;
@@ -364,20 +395,22 @@ body {
         text-align: center;
     }
     .columns-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
         gap: 15px;
         height: auto;
         min-height: auto;
         display: flex;
         flex-direction: column;
     }
-    .column-card {
-        max-height: 300px;
+    .column-card:nth-child(1),
+    .column-card:nth-child(3) {
+        display: none !important;
+    }
+    .column-card:nth-child(2) {
+        display: flex !important;
+        max-height: 500px;
         min-height: 200px;
         flex-shrink: 0;
-    }
-    .column-card:last-child {
-        grid-column: span 1;
     }
     .column-header {
         font-size: 15px;
@@ -390,19 +423,23 @@ body {
     .column-scroll {
         -webkit-overflow-scrolling: touch;
     }
+    .img-left,
+    .img-right {
+        float: none !important;
+        display: block;
+        margin: 10px auto !important;
+        max-width: 100%;
+        height: auto;
+    }
 }
 
+/* Ландшафт на телефонах (≤ 900px) */
 @media (max-width: 900px) and (orientation: landscape) {
+    .vertical-menu {
+        display: none !important;
+    }
     .mobile-language-selector {
-        display: flex !important;
-        padding: 8px 16px;
-    }
-    .mobile-language-selector .mobile-brand {
-        font-size: 16px;
-    }
-    .mobile-language-selector select {
-        padding: 8px 12px;
-        font-size: 14px;
+        display: none !important;
     }
     .main-content {
         padding: 12px 15px;
@@ -417,8 +454,8 @@ body {
         height: auto;
         gap: 12px;
     }
-    .column-card:last-child {
-        grid-column: span 2;
+    .column-card:nth-child(3) {
+        display: none !important;
     }
     .column-card {
         max-height: 40vh;
@@ -427,6 +464,7 @@ body {
     }
 }
 
+/* Очень маленькие экраны (≤ 400px) */
 @media (max-width: 400px) {
     .mobile-language-selector {
         padding: 8px 10px;
@@ -448,8 +486,8 @@ body {
     .main-content h1 {
         font-size: 18px;
     }
-    .column-card {
-        max-height: 250px;
+    .column-card:nth-child(2) {
+        max-height: 400px;
         min-height: 150px;
         padding: 12px;
     }
@@ -463,6 +501,7 @@ body {
     }
 }
 
+/* Большие экраны (≥ 1400px) */
 @media (min-width: 1400px) {
     .columns-container {
         gap: 25px;
