@@ -486,20 +486,11 @@ body {
 @media (max-width: 900px) and (orientation: landscape) {
     /* ---------- МЕНЮ ---------- */
     .vertical-menu {
-        display: none !important;
+        display: flex !important;
     }
     .mobile-language-selector {
-        display: flex !important;
-        padding: 6px 12px;
+        display: none !important;
     }
-    .mobile-language-selector .mobile-brand {
-        font-size: 16px;
-    }
-    .mobile-language-selector select {
-        padding: 6px 10px;
-        font-size: 14px;
-    }
-
     /* ---------- ТЕЛО ---------- */
     body {
         flex-direction: column;
