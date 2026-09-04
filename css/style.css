@@ -385,7 +385,7 @@ body {
     }
     .main-content {
         padding: 15px;
-        min-height: 100vh;           /* ← ВАЖНО: на всю высоту экрана */
+        min-height: calc(100vh - 60px);
         height: auto;
         overflow-y: auto;
     }
@@ -397,8 +397,8 @@ body {
     .columns-container {
         grid-template-columns: 1fr !important;
         gap: 15px;
-        height: 100vh;               /* ← ВАЖНО: на всю высоту экрана */
-        min-height: 100vh;
+        height: auto;
+        min-height: auto;
         display: flex;
         flex-direction: column;
     }
@@ -406,7 +406,7 @@ body {
     .column-card:nth-child(3) {
         display: none !important;
     }
-    .column-card:nth-child(2) {
+     .column-card:nth-child(2) {
         display: flex !important;
         flex: 1 1 auto;              /* ← РАСТЯГИВАЕТСЯ */
         min-height: 100vh;           /* ← НА ВСЮ ВЫСОТУ ЭКРАНА */
