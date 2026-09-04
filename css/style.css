@@ -408,8 +408,7 @@ body {
     }
     .column-card:nth-child(2) {
         display: flex !important;
-        max-height: 9500px;
-        min-height: 9200px;
+
         flex-shrink: 0;
     }
     .column-header {
