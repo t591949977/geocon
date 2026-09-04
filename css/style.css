@@ -407,10 +407,14 @@ body {
         display: none !important;
     }
     .column-card:nth-child(2) {
-        display: flex !important;
+    display: flex !important;
+    flex: 1 1 auto;
+    min-height: 100vh;
+    max-height: 100vh;
+    flex-shrink: 0;
+    overflow: hidden;
+}
 
-        flex-shrink: 0;
-    }
     .column-header {
         font-size: 15px;
         padding-bottom: 10px;
