@@ -383,6 +383,9 @@ body {
     body {
         flex-direction: column;
     }
-
+    .column-card:nth-child(1),
+    .column-card:nth-child(3) {
+        display: none !important;
+    }
 
 }
