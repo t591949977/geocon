@@ -435,36 +435,7 @@ body {
     }
 }
 
-/* Ландшафт на телефонах (≤ 900px) */
-@media (max-width: 900px) and (orientation: landscape) {
-    .vertical-menu {
-        display: none !important;
-    }
-    .mobile-language-selector {
-        display: none !important;
-    }
-    .main-content {
-        padding: 12px 15px;
-        min-height: calc(100vh - 50px);
-    }
-    .main-content h1 {
-        font-size: 20px;
-        margin-bottom: 10px;
-    }
-    .columns-container {
-        grid-template-columns: 1fr 1fr;
-        height: auto;
-        gap: 12px;
-    }
-    .column-card:nth-child(3) {
-        display: none !important;
-    }
-    .column-card {
-        max-height: 40vh;
-        min-height: 120px;
-        padding: 12px;
-    }
-}
+
 
 /* Очень маленькие экраны (≤ 400px) */
 @media (max-width: 400px) {
