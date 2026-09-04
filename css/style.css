@@ -373,7 +373,16 @@ body {
 }
 
 /* 1 колонка (≤ 768px) */
+@media (max-width: 768px) {
+    .vertical-menu {
+        display: none !important;
+    }
+    .mobile-language-selector {
+        display: flex !important;
+    }
+    body {
+        flex-direction: column;
+    }
 
 
-
-
+}
