@@ -32,7 +32,6 @@ body {
     flex-direction: column;
     box-shadow: 2px 0 10px rgba(0,0,0,0.1);
     flex-shrink: 0;
-    /* Убираем height: 100vh — теперь растягивается через flex */
 }
 
 .language-selector {
@@ -265,9 +264,9 @@ body {
 }
 
 .text-center {
-    text-align: center;      /* Выравнивание по центру */
-    font-size: 18px;         /* Размер шрифта (можно в px, rem, em) */
-    font-weight: bold;       /* Жирность (или числом, например, 700) */
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 /* ============================================
@@ -303,11 +302,11 @@ body {
 }
 
 .column-scroll {
-	flex: 1;
-	overflow-y: auto;
-	min-height: 0;
-	padding-right: 4px;
-	color: #555657;
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+    padding-right: 4px;
+    color: #555657;
 }
 
 .column-table {
@@ -315,7 +314,7 @@ body {
     border-collapse: collapse;
     font-size: 14px;
     text-align: justify;
-    border: 1px solid #f0f0f0; /* ширина 2px, сплошная (solid), цвет темно-серый */
+    border: 1px solid #f0f0f0;
 }
 
 .column-table td {
@@ -372,20 +371,195 @@ body {
     }
 }
 
-/* 1 колонка (≤ 768px) */
+/* ============================================
+   МОБИЛЬНАЯ ВЕРСИЯ (≤ 768px)
+   ============================================ */
 @media (max-width: 768px) {
+    /* ---------- МЕНЮ ---------- */
     .vertical-menu {
         display: none !important;
     }
     .mobile-language-selector {
         display: flex !important;
     }
+
+    /* ---------- ТЕЛО ---------- */
     body {
         flex-direction: column;
     }
+
+    /* ---------- ОСНОВНОЙ КОНТЕНТ ---------- */
+    .main-content {
+        padding: 10px 10px 10px 10px;
+        min-height: 100vh;
+        height: auto;
+        overflow-y: auto;
+    }
+
+    /* ---------- СКРЫВАЕМ ЗАГОЛОВОК СТРАНИЦЫ ---------- */
+    .main-content h1 {
+        display: none !important;
+    }
+
+    /* ---------- КОЛОНКИ ---------- */
+    .columns-container {
+        display: flex !important;
+        flex-direction: column;
+        gap: 0px;
+        height: 100vh;
+        min-height: 100vh;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Скрываем 1-ю и 3-ю колонки */
     .column-card:nth-child(1),
     .column-card:nth-child(3) {
         display: none !important;
     }
 
+    /* ---------- 2-я КОЛОНКА — НА ВСЮ ШИРИНУ И ВЫСОТУ ---------- */
+    .column-card:nth-child(2) {
+        display: flex !important;
+        flex: 1 1 auto;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: 100vh;
+        max-height: 100vh;
+        margin: 0;
+        padding: 10px 12px;
+        border-radius: 0;
+        box-shadow: none;
+        overflow: hidden;
+    }
+
+    /* ---------- ЗАГОЛОВОК КОЛОНКИ ---------- */
+    .column-header {
+        font-size: 20px;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        flex-shrink: 0;
+    }
+
+    /* ---------- СОДЕРЖИМОЕ КОЛОНКИ ---------- */
+    .column-scroll {
+        font-size: 18px;
+        line-height: 1.6;
+        padding-right: 4px;
+        flex: 1;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* ---------- ТАБЛИЦА ---------- */
+    .column-table {
+        font-size: 18px;
+        border: none;
+    }
+
+    .column-table td {
+        padding: 12px 6px;
+        font-size: 18px;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    /* ---------- КАРТИНКИ НА МОБИЛЬНЫХ ---------- */
+    .img-left,
+    .img-right {
+        float: none !important;
+        display: block;
+        margin: 10px auto !important;
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* ---------- ССЫЛКИ ---------- */
+    .column-table a {
+        font-size: 18px;
+    }
+}
+
+/* Ландшафт на телефонах (≤ 900px) */
+@media (max-width: 900px) and (orientation: landscape) {
+    .vertical-menu {
+        display: none !important;
+    }
+    .mobile-language-selector {
+        display: none !important;
+    }
+    .main-content {
+        padding: 12px 15px;
+        min-height: calc(100vh - 50px);
+    }
+    .main-content h1 {
+        display: none !important;
+    }
+    .columns-container {
+        grid-template-columns: 1fr 1fr;
+        height: auto;
+        gap: 12px;
+    }
+    .column-card:nth-child(3) {
+        display: none !important;
+    }
+    .column-card {
+        max-height: 40vh;
+        min-height: 120px;
+        padding: 12px;
+    }
+}
+
+/* Очень маленькие экраны (≤ 400px) */
+@media (max-width: 400px) {
+    .mobile-language-selector {
+        padding: 8px 10px;
+        gap: 8px;
+    }
+    .mobile-language-selector .mobile-brand {
+        font-size: 14px;
+    }
+    .mobile-language-selector select {
+        padding: 8px 10px;
+        font-size: 13px;
+        background-size: 14px;
+        background-position: right 8px center;
+    }
+    .main-content {
+        padding: 8px;
+        min-height: 100vh;
+    }
+    .column-card:nth-child(2) {
+        padding: 8px 10px;
+        min-height: 100vh;
+        max-height: 100vh;
+    }
+    .column-header {
+        font-size: 18px;
+        padding-bottom: 8px;
+    }
+    .column-scroll {
+        font-size: 16px;
+    }
+    .column-table td {
+        padding: 8px 4px;
+        font-size: 16px;
+    }
+    .column-table a {
+        font-size: 16px;
+    }
+}
+
+/* Большие экраны (≥ 1400px) */
+@media (min-width: 1400px) {
+    .columns-container {
+        gap: 25px;
+    }
+    .column-table td {
+        padding: 14px 12px;
+        font-size: 15px;
+    }
+    .column-header {
+        font-size: 18px;
+    }
 }
