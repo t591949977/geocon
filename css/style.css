@@ -9,6 +9,8 @@
 
 html, body {
     height: 100%;
+    margin: 0;
+    padding: 0;
     background: #f0f2f5;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -275,10 +277,11 @@ body {
    ============================================ */
 .columns-container {
     flex: 1;
-    display: grid;
+    display: flex;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
-    min-height: 0;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .column-card {
