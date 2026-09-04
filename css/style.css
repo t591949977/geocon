@@ -484,33 +484,102 @@ body {
    ЛАНДШАФТ НА ТЕЛЕФОНАХ (≤ 900px)
    ============================================ */
 @media (max-width: 900px) and (orientation: landscape) {
-    /* ---------- МЕНЮ ---------- */
-    .vertical-menu {
-        display: none !important;
-    }
-    .mobile-language-selector {
-        display: flex !important;
-        padding: 6px 12px;
-    }
-    .mobile-language-selector .mobile-brand {
-        font-size: 16px;
-    }
-    .mobile-language-selector select {
-        padding: 6px 10px;
-        font-size: 14px;
-    }
-
     /* ---------- ТЕЛО ---------- */
     body {
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    /* ---------- ДЕСКТОПНОЕ МЕНЮ — ПОКАЗЫВАЕМ КОМПАКТНО ---------- */
+    .vertical-menu {
+        display: flex !important;
+        width: 200px;
+        min-height: 100vh;
+        padding: 12px 10px;
+        flex-shrink: 0;
+        background: #e8e8e8;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    }
+
+    .language-selector {
+        margin-bottom: 10px;
+        flex-shrink: 0;
+    }
+
+    .language-selector select {
+        padding: 6px 10px;
+        font-size: 13px;
+        border-radius: 8px;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        background-size: 14px;
+    }
+
+    .nav-buttons {
+        display: flex;
         flex-direction: column;
+        gap: 4px;
+        flex: 1;
+        overflow-y: auto;
+        min-height: 0;
+        padding-right: 2px;
+    }
+
+    .nav-btn {
+        padding: 8px 12px;
+        font-size: 13px;
+        min-height: 36px;
+        border-radius: 8px;
+        background: rgba(0,0,0,0.05);
+        color: #555555;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        line-height: 1.3;
+    }
+
+    .nav-btn .btn-text {
+        display: block;
+        word-wrap: break-word;
+        white-space: normal;
+        line-height: 1.3;
+        font-size: 13px;
+    }
+
+    .nav-btn:hover {
+        background: rgba(184, 168, 138, 0.2);
+        color: #333333;
+        transform: translateX(3px);
+    }
+
+    .nav-btn.active {
+        background: #c8c8c8 !important;
+        color: #222222 !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+        transform: translateX(3px);
+    }
+
+    .nav-btn.active::before {
+        content: '▸';
+        position: absolute;
+        left: -3px;
+        color: #999999;
+        font-size: 16px;
+    }
+
+    /* ---------- СКРЫВАЕМ МОБИЛЬНОЕ МЕНЮ ---------- */
+    .mobile-language-selector {
+        display: none !important;
     }
 
     /* ---------- ОСНОВНОЙ КОНТЕНТ ---------- */
     .main-content {
-        padding: 8px 10px 10px 10px;
+        flex: 1;
+        padding: 12px 20px 20px 20px;
         min-height: 100vh;
-        height: auto;
         overflow-y: auto;
+        display: flex;
+        flex-direction: column;
     }
 
     /* Скрываем заголовок страницы */
@@ -523,11 +592,12 @@ body {
         display: flex !important;
         flex-direction: column;
         gap: 0px;
-        height: 100vh;
-        min-height: 100vh;
+        height: 100%;
+        min-height: 100%;
         width: 100%;
         padding: 0;
         margin: 0;
+        flex: 1;
     }
 
     /* Скрываем 1-ю и 3-ю колонки */
@@ -542,42 +612,41 @@ body {
         flex: 1 1 auto;
         width: 100% !important;
         max-width: 100% !important;
-        min-height: 100vh;
-        max-height: 100vh;
+        min-height: 100%;
+        max-height: 100%;
         margin: 0;
         padding: 8px 12px;
-        border-radius: 0;
-        box-shadow: none;
+        border-radius: 8px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
         overflow: hidden;
+        background: white;
     }
 
-    /* ---------- ЗАГОЛОВОК КОЛОНКИ ---------- */
+    /* ---------- СКРЫВАЕМ ЗАГОЛОВОК КОЛОНКИ ---------- */
     .column-header {
-        font-size: 18px;
-        padding-bottom: 8px;
-        margin-bottom: 8px;
-        flex-shrink: 0;
+        display: none !important;
     }
 
     /* ---------- СОДЕРЖИМОЕ КОЛОНКИ ---------- */
     .column-scroll {
-        font-size: 16px;
+        font-size: 15px;
         line-height: 1.5;
         padding-right: 4px;
         flex: 1;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
+        color: #333;
     }
 
     /* ---------- ТАБЛИЦА ---------- */
     .column-table {
-        font-size: 16px;
+        font-size: 15px;
         border: none;
     }
 
     .column-table td {
-        padding: 10px 6px;
-        font-size: 16px;
+        padding: 8px 6px;
+        font-size: 15px;
         border-bottom: 1px solid #f0f0f0;
     }
 
@@ -587,12 +656,31 @@ body {
         float: none !important;
         display: block;
         margin: 8px auto !important;
-        max-width: 80%;
+        max-width: 70%;
         height: auto;
     }
 
     .column-table a {
-        font-size: 16px;
+        font-size: 15px;
+    }
+
+    /* ---------- СКРОЛЛБАР ---------- */
+    .nav-buttons::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .nav-buttons::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 4px;
+    }
+
+    .nav-buttons::-webkit-scrollbar-thumb {
+        background: #c1c1c1;
+        border-radius: 4px;
+    }
+
+    .nav-buttons::-webkit-scrollbar-thumb:hover {
+        background: #a8a8a8;
     }
 }
 
