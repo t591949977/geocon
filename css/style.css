@@ -406,11 +406,12 @@ body {
     .column-card:nth-child(3) {
         display: none !important;
     }
-    .column-card:nth-child(2) {
+
+
+.column-card:nth-child(2) {
     display: flex !important;
     flex: 1 1 auto;
     min-height: 100vh;
-    max-height: 100vh;
     flex-shrink: 0;
     overflow: hidden;
 }
