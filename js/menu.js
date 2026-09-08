@@ -20,7 +20,7 @@
     function checkWidthAndRebuild() {
         const wasMobile = window._isMobile;
         const nowMobile = isMobile();
-        
+debugger; 
         if (wasMobile !== nowMobile) {
             window._isMobile = nowMobile;
             menuBuilt = false;
@@ -66,6 +66,19 @@
                 tr: 'Yaz modası, ağırlıksız kumaşlarda ifade edilen bir hafiflik manifestosudu'
             }
         },
+	{
+            id: 'index5',
+	    titles: {
+	de: 'Reise mit uns um die ganze Welt.',
+	en: 'Travel with us around the world.',
+	es: 'Viaja con nosotros por todo el mundo.',
+	fr: 'Voyagez avec nous à travers le monde.',
+	it: 'Viaggia con noi in tutto il mondo.',
+	ka: 'იმოგზაურე ჩვენთან ერთად მთელს მსოფლიოში.',
+	ru: 'Путешествуй с нами по всему миру.',
+	tr: 'Bizimle dünyayı dolaş.'
+	}
+	},
         {
             id: 'index2',
             titles: {
@@ -211,6 +224,7 @@
     function buildMenu() {
         if (menuBuilt) {
             return;
+
         }
 
         const mobile = isMobile();
