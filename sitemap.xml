@@ -4,7 +4,7 @@
    
     <!-- Главная страница (английская) -->
     <url>
-        <loc>https://geocon.com.ge/index.html</loc>
+        <loc>https://geocon.com.ge/</loc>
         <lastmod>2026-09-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
@@ -14,41 +14,41 @@
 
 
     <url>
-        <loc>https://geocon.com.ge/index2-en.html</loc>
+        <loc>https://geocon.com.ge/index2-en</loc>
         <lastmod>2026-09-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://geocon.com.ge/index2.html</loc>
-        <lastmod>2026-09-03</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://geocon.com.ge/index2-de.html</loc>
+        <loc>https://geocon.com.ge/index2</loc>
         <lastmod>2026-09-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://geocon.com.ge/index2-es.html</loc>
+        <loc>https://geocon.com.ge/index2-de</loc>
         <lastmod>2026-09-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://geocon.com.ge/index2-fr.html</loc>
+        <loc>https://geocon.com.ge/index2-es</loc>
         <lastmod>2026-09-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://geocon.com.ge/index2-it.html</loc>
+        <loc>https://geocon.com.ge/index2-fr</loc>
+        <lastmod>2026-09-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://geocon.com.ge/index2-it</loc>
         <lastmod>2026-09-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -62,14 +62,14 @@
     </url>
 
     <url>
-        <loc>https://geocon.com.ge/index2-ru.html</loc>
+        <loc>https://geocon.com.ge/index2-ru</loc>
         <lastmod>2026-09-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://geocon.com.ge/index2-tr.html</loc>
+        <loc>https://geocon.com.ge/index2-tr</loc>
         <lastmod>2026-09-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -80,41 +80,41 @@
 
 
     <url>
-        <loc>https://geocon.com.ge/index3-en.html</loc>
+        <loc>https://geocon.com.ge/index3-en</loc>
         <lastmod>2026-09-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://geocon.com.ge/index3.html</loc>
-        <lastmod>2026-09-03</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://geocon.com.ge/index3-de.html</loc>
+        <loc>https://geocon.com.ge/index3</loc>
         <lastmod>2026-09-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://geocon.com.ge/index3-es.html</loc>
+        <loc>https://geocon.com.ge/index3-de</loc>
         <lastmod>2026-09-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://geocon.com.ge/index3-fr.html</loc>
+        <loc>https://geocon.com.ge/index3-es</loc>
         <lastmod>2026-09-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://geocon.com.ge/index3-it.html</loc>
+        <loc>https://geocon.com.ge/index3-fr</loc>
+        <lastmod>2026-09-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://geocon.com.ge/index3-it</loc>
         <lastmod>2026-09-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -128,14 +128,14 @@
     </url>
 
     <url>
-        <loc>https://geocon.com.ge/index3-ru.html</loc>
+        <loc>https://geocon.com.ge/index3-ru</loc>
         <lastmod>2026-09-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://geocon.com.ge/index3-tr.html</loc>
+        <loc>https://geocon.com.ge/index3-tr</loc>
         <lastmod>2026-09-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -147,41 +147,41 @@
 
 
    <url>
-        <loc>https://geocon.com.ge/index4-en.html</loc>
+        <loc>https://geocon.com.ge/index4-en</loc>
         <lastmod>2026-09-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://geocon.com.ge/index4.html</loc>
-        <lastmod>2026-09-03</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://geocon.com.ge/index4-de.html</loc>
+        <loc>https://geocon.com.ge/index4</loc>
         <lastmod>2026-09-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://geocon.com.ge/index4-es.html</loc>
+        <loc>https://geocon.com.ge/index4-de</loc>
         <lastmod>2026-09-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://geocon.com.ge/index4-fr.html</loc>
+        <loc>https://geocon.com.ge/index4-es</loc>
         <lastmod>2026-09-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://geocon.com.ge/index4-it.html</loc>
+        <loc>https://geocon.com.ge/index4-fr</loc>
+        <lastmod>2026-09-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://geocon.com.ge/index4-it</loc>
         <lastmod>2026-09-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -195,14 +195,14 @@
     </url>
 
     <url>
-        <loc>https://geocon.com.ge/index4-ru.html</loc>
+        <loc>https://geocon.com.ge/index4-ru</loc>
         <lastmod>2026-09-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://geocon.com.ge/index4-tr.html</loc>
+        <loc>https://geocon.com.ge/index4-tr</loc>
         <lastmod>2026-09-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -213,41 +213,41 @@
 
 
 <url>
-        <loc>https://geocon.com.ge/index5-en.html</loc>
+        <loc>https://geocon.com.ge/index5-en</loc>
         <lastmod>2026-09-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://geocon.com.ge/index5.html</loc>
-        <lastmod>2026-09-08</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://geocon.com.ge/index5-de.html</loc>
+        <loc>https://geocon.com.ge/index5</loc>
         <lastmod>2026-09-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://geocon.com.ge/index5-es.html</loc>
+        <loc>https://geocon.com.ge/index5-de</loc>
         <lastmod>2026-09-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://geocon.com.ge/index5-fr.html</loc>
+        <loc>https://geocon.com.ge/index5-es</loc>
         <lastmod>2026-09-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://geocon.com.ge/index5-it.html</loc>
+        <loc>https://geocon.com.ge/index5-fr</loc>
+        <lastmod>2026-09-08</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://geocon.com.ge/index5-it</loc>
         <lastmod>2026-09-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -261,14 +261,14 @@
     </url>
 
     <url>
-        <loc>https://geocon.com.ge/index5-ru.html</loc>
+        <loc>https://geocon.com.ge/index5-ru</loc>
         <lastmod>2026-09-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://geocon.com.ge/index5-tr.html</loc>
+        <loc>https://geocon.com.ge/index5-tr</loc>
         <lastmod>2026-09-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
