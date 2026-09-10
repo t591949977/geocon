@@ -568,4 +568,142 @@
         <xhtml:link rel="alternate" hreflang="x-default" href="https://geocon.com.ge/index5-en"/>
     </url>
 
+	<!-- БЛОК СТРАНИЦ youtube -->
+    <url>
+        <loc>https://geocon.com.ge/youtube-en</loc>
+        <lastmod>2026-09-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://geocon.com.ge/youtube-en"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://geocon.com.ge/youtube-de"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://geocon.com.ge/youtube-es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://geocon.com.ge/youtube-fr"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://geocon.com.ge/youtube-it"/>
+        <xhtml:link rel="alternate" hreflang="ka" href="https://geocon.com.ge/youtube-ka"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://geocon.com.ge/youtube-ru"/>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://geocon.com.ge/youtube-tr"/>
+
+	<!-- Добавьте x-default сюда тоже (укажите основной язык, например, английский) -->
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://geocon.com.ge/youtube-en"/>
+    </url>
+    <url>
+        <loc>https://geocon.com.ge/youtube-de</loc>
+        <lastmod>2026-09-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://geocon.com.ge/youtube-en"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://geocon.com.ge/youtube-de"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://geocon.com.ge/youtube-es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://geocon.com.ge/youtube-fr"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://geocon.com.ge/youtube-it"/>
+        <xhtml:link rel="alternate" hreflang="ka" href="https://geocon.com.ge/youtube-ka"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://geocon.com.ge/youtube-ru"/>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://geocon.com.ge/youtube-tr"/>
+
+	<!-- Добавьте x-default сюда тоже (укажите основной язык, например, английский) -->
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://geocon.com.ge/youtube-en"/>
+    </url>
+    <url>
+        <loc>https://geocon.com.ge/youtube-es</loc>
+        <lastmod>2026-09-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://geocon.com.ge/youtube-en"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://geocon.com.ge/youtube-de"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://geocon.com.ge/youtube-es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://geocon.com.ge/youtube-fr"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://geocon.com.ge/youtube-it"/>
+        <xhtml:link rel="alternate" hreflang="ka" href="https://geocon.com.ge/youtube-ka"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://geocon.com.ge/youtube-ru"/>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://geocon.com.ge/youtube-tr"/>
+
+	<!-- Добавьте x-default сюда тоже (укажите основной язык, например, английский) -->
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://geocon.com.ge/youtube-en"/>
+    </url>
+    <url>
+        <loc>https://geocon.com.ge/youtube-fr</loc>
+        <lastmod>2026-09-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://geocon.com.ge/youtube-en"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://geocon.com.ge/youtube-de"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://geocon.com.ge/youtube-es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://geocon.com.ge/youtube-fr"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://geocon.com.ge/youtube-it"/>
+        <xhtml:link rel="alternate" hreflang="ka" href="https://geocon.com.ge/youtube-ka"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://geocon.com.ge/youtube-ru"/>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://geocon.com.ge/youtube-tr"/>
+
+	<!-- Добавьте x-default сюда тоже (укажите основной язык, например, английский) -->
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://geocon.com.ge/youtube-en"/>
+    </url>
+    <url>
+        <loc>https://geocon.com.ge/youtube-it</loc>
+        <lastmod>2026-09-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://geocon.com.ge/youtube-en"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://geocon.com.ge/youtube-de"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://geocon.com.ge/youtube-es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://geocon.com.ge/youtube-fr"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://geocon.com.ge/youtube-it"/>
+        <xhtml:link rel="alternate" hreflang="ka" href="https://geocon.com.ge/youtube-ka"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://geocon.com.ge/youtube-ru"/>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://geocon.com.ge/youtube-tr"/>
+
+	<!-- Добавьте x-default сюда тоже (укажите основной язык, например, английский) -->
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://geocon.com.ge/youtube-en"/>
+    </url>
+    <url>
+        <loc>https://geocon.com.ge/youtube-ka</loc>
+        <lastmod>2026-09-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://geocon.com.ge/youtube-en"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://geocon.com.ge/youtube-de"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://geocon.com.ge/youtube-es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://geocon.com.ge/youtube-fr"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://geocon.com.ge/youtube-it"/>
+        <xhtml:link rel="alternate" hreflang="ka" href="https://geocon.com.ge/youtube-ka"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://geocon.com.ge/youtube-ru"/>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://geocon.com.ge/youtube-tr"/>
+
+	<!-- Добавьте x-default сюда тоже (укажите основной язык, например, английский) -->
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://geocon.com.ge/youtube-en"/>
+    </url>
+    <url>
+        <loc>https://geocon.com.ge/youtube-ru</loc>
+        <lastmod>2026-09-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://geocon.com.ge/youtube-en"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://geocon.com.ge/youtube-de"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://geocon.com.ge/youtube-es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://geocon.com.ge/youtube-fr"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://geocon.com.ge/youtube-it"/>
+        <xhtml:link rel="alternate" hreflang="ka" href="https://geocon.com.ge/youtube-ka"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://geocon.com.ge/youtube-ru"/>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://geocon.com.ge/youtube-tr"/>
+
+	<!-- Добавьте x-default сюда тоже (укажите основной язык, например, английский) -->
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://geocon.com.ge/youtube-en"/>
+    </url>
+    <url>
+        <loc>https://geocon.com.ge/youtube-tr</loc>
+        <lastmod>2026-09-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://geocon.com.ge/youtube-en"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://geocon.com.ge/youtube-de"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://geocon.com.ge/youtube-es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://geocon.com.ge/youtube-fr"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://geocon.com.ge/youtube-it"/>
+        <xhtml:link rel="alternate" hreflang="ka" href="https://geocon.com.ge/youtube-ka"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://geocon.com.ge/youtube-ru"/>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://geocon.com.ge/youtube-tr"/>
+
+	<!-- Добавьте x-default сюда тоже (укажите основной язык, например, английский) -->
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://geocon.com.ge/youtube-en"/>
+    </url> 
+
 </urlset>
