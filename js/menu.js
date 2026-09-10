@@ -79,6 +79,22 @@ debugger;
 	tr: 'Bizimle dünyayı dolaş.'
 	}
 	},
+
+	{
+            id: 'youtube',
+	    titles: {
+	de: 'Willkommen auf meinem YouTube-Kanal.',
+	en: 'Welcome to my YouTube channel.',
+	es: 'Bienvenido a mi canal de YouTube.',
+	fr: 'Bienvenue sur ma chaîne YouTube.',
+	it: 'Benvenuto sul mio canale YouTube.',
+	ka: 'მოგესალმებით ჩემს YouTube არხზე.',
+	ru: 'Добро пожаловать на мой YouTube-канал.',
+	tr: 'YouTube kanalıma hoş geldiniz.'
+	}
+	},
+
+
         {
             id: 'index2',
             titles: {
