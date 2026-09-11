@@ -48,17 +48,15 @@
 
     <h1>Проверка встраивания YouTube на Android</h1>
 
-    <div class="video-container">
-        <iframe
-            src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ"
-            title="YouTube video player"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-        </iframe>
-    </div>
+
     
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLBWlZJjsQfNc" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+<a href="https://example.com/desktop" id="myLink">Перейти</a>
+
+<script>
+  const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
+  const link = document.getElementById('myLink');
+  link.href = isMobile ? 'https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ' : 'https://youtu.be/0waeEetEh6o';
+</script>
 
     <p>Если видео воспроизводится без входа в аккаунт — проблема была в коде вашей страницы.<br>
        Если появляется ошибка 153 — причина на стороне YouTube или в настройках хостинга.</p>
