@@ -54,7 +54,13 @@
                           <p>Сейчас у меня чуть больше 150 подписчиков на YouTube, и я каждый день учусь создавать качественную видеорекламу. Я стараюсь, чтобы даже рекламный ролик вызывал улыбку, дарил хорошее настроение и запоминался. Я верю, что творческий подход способен превратить любую рекламу в мини-шоу, которое смотрят с удовольствием.</p>
                           <p>Я приглашаю вас посмотреть мои работы. Мне очень важно ваше мнение: что зацепило, что показалось слабым, что хочется увидеть в следующих видео? </p>
                           <p class="text-center"><a href="https://www.youtube.com/playlist?list=PLBWlZJjsQfNc" target="_blank">Перейти на YouTube</a></p>
-                          <p class="text-center"><a href="https://www.youtube.com/playlist?list=PLBWlZJjsQfNc" target="_blank"><img src="Video.png" alt="Перейти на YouTube" width="100" height="100"></a></p>
+                          <p class="text-center"><a href="https://www.youtube.com/playlist?list=PLBWlZJjsQfNc" target="_blank"><img src="Video.png" alt="Перейти на YouTube" width="100" height="100" id="myLink"></a>
+ <script>
+  const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
+  const link = document.getElementById('myLink');
+  link.href = isMobile ? 'https://www.youtube.com/embed/videoseries?list=PLBWlZJjsQfNc' : 'https://youtube.com/playlist?list=PLBWlZJjsQfNc&si=n0b-phr5JGio7sZI';
+</script>                         
+                          </p>
                           <p>&nbsp;</p>
                           <p>Пишите всё — я открыт к диалогу и готов расти благодаря вашим советам.</p>
                       <p class="text-center">📩 <strong>Жду ваших писем:</strong> myflashge@gmal.com</p></td></tr>
