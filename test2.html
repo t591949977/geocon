@@ -50,12 +50,12 @@
 
 
     
-<a href="https://example.com/desktop" id="myLink">Перейти</a>
+<a href="https://example.com/desktop" id="myLink" target="_blank" rel="noopener">Перейти</a>
 
 <script>
   const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
   const link = document.getElementById('myLink');
-  link.href = isMobile ? 'https://www.youtube.com/embed/videoseries?list=PLBWlZJjsQfNc' : 'https://youtu.be/0waeEetEh6o';
+  link.href = isMobile ? 'https://www.youtube.com/embed/videoseries?list=PLBWlZJjsQfNc' : 'https://youtube.com/playlist?list=PLBWlZJjsQfNc&si=n0b-phr5JGio7sZI';
 </script>
 
     <p>Если видео воспроизводится без входа в аккаунт — проблема была в коде вашей страницы.<br>
