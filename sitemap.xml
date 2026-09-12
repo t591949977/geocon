@@ -5,7 +5,7 @@
     <!-- ГЛАВНАЯ СТРАНИЦА -->
     <url>
         <loc>https://geocon.com.ge/</loc>
-        <lastmod>2026-09-03</lastmod>
+        <lastmod>2026-09-12</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://geocon.com.ge/"/>
@@ -705,5 +705,283 @@
 	<!-- Добавьте x-default сюда тоже (укажите основной язык, например, английский) -->
         <xhtml:link rel="alternate" hreflang="x-default" href="https://geocon.com.ge/youtube-en"/>
     </url> 
+
+<!-- БЛОК СТРАНИЦ tourism2 -->
+    <url>
+        <loc>https://geocon.com.ge/tourism2-en</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://geocon.com.ge/tourism2-en"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://geocon.com.ge/tourism2-de"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://geocon.com.ge/tourism2-es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://geocon.com.ge/tourism2-fr"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://geocon.com.ge/tourism2-it"/>
+        <xhtml:link rel="alternate" hreflang="ka" href="https://geocon.com.ge/tourism2-ka"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://geocon.com.ge/tourism2-ru"/>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://geocon.com.ge/tourism2-tr"/>
+
+	<!-- Добавьте x-default сюда тоже (укажите основной язык, например, английский) -->
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://geocon.com.ge/tourism2-en"/>
+    </url>
+    <url>
+        <loc>https://geocon.com.ge/tourism2-de</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://geocon.com.ge/tourism2-en"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://geocon.com.ge/tourism2-de"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://geocon.com.ge/tourism2-es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://geocon.com.ge/tourism2-fr"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://geocon.com.ge/tourism2-it"/>
+        <xhtml:link rel="alternate" hreflang="ka" href="https://geocon.com.ge/tourism2-ka"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://geocon.com.ge/tourism2-ru"/>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://geocon.com.ge/tourism2-tr"/>
+
+	<!-- Добавьте x-default сюда тоже (укажите основной язык, например, английский) -->
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://geocon.com.ge/tourism2-en"/>
+    </url>
+    <url>
+        <loc>https://geocon.com.ge/tourism2-es</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://geocon.com.ge/tourism2-en"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://geocon.com.ge/tourism2-de"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://geocon.com.ge/tourism2-es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://geocon.com.ge/tourism2-fr"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://geocon.com.ge/tourism2-it"/>
+        <xhtml:link rel="alternate" hreflang="ka" href="https://geocon.com.ge/tourism2-ka"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://geocon.com.ge/tourism2-ru"/>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://geocon.com.ge/tourism2-tr"/>
+
+	<!-- Добавьте x-default сюда тоже (укажите основной язык, например, английский) -->
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://geocon.com.ge/tourism2-en"/>
+    </url>
+    <url>
+        <loc>https://geocon.com.ge/tourism2-fr</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://geocon.com.ge/tourism2-en"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://geocon.com.ge/tourism2-de"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://geocon.com.ge/tourism2-es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://geocon.com.ge/tourism2-fr"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://geocon.com.ge/tourism2-it"/>
+        <xhtml:link rel="alternate" hreflang="ka" href="https://geocon.com.ge/tourism2-ka"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://geocon.com.ge/tourism2-ru"/>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://geocon.com.ge/tourism2-tr"/>
+
+	<!-- Добавьте x-default сюда тоже (укажите основной язык, например, английский) -->
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://geocon.com.ge/tourism2-en"/>
+    </url>
+    <url>
+        <loc>https://geocon.com.ge/tourism2-it</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://geocon.com.ge/tourism2-en"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://geocon.com.ge/tourism2-de"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://geocon.com.ge/tourism2-es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://geocon.com.ge/tourism2-fr"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://geocon.com.ge/tourism2-it"/>
+        <xhtml:link rel="alternate" hreflang="ka" href="https://geocon.com.ge/tourism2-ka"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://geocon.com.ge/tourism2-ru"/>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://geocon.com.ge/tourism2-tr"/>
+
+	<!-- Добавьте x-default сюда тоже (укажите основной язык, например, английский) -->
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://geocon.com.ge/tourism2-en"/>
+    </url>
+    <url>
+        <loc>https://geocon.com.ge/tourism2-ka</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://geocon.com.ge/tourism2-en"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://geocon.com.ge/tourism2-de"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://geocon.com.ge/tourism2-es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://geocon.com.ge/tourism2-fr"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://geocon.com.ge/tourism2-it"/>
+        <xhtml:link rel="alternate" hreflang="ka" href="https://geocon.com.ge/tourism2-ka"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://geocon.com.ge/tourism2-ru"/>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://geocon.com.ge/tourism2-tr"/>
+
+	<!-- Добавьте x-default сюда тоже (укажите основной язык, например, английский) -->
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://geocon.com.ge/tourism2-en"/>
+    </url>
+    <url>
+        <loc>https://geocon.com.ge/tourism2-ru</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://geocon.com.ge/tourism2-en"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://geocon.com.ge/tourism2-de"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://geocon.com.ge/tourism2-es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://geocon.com.ge/tourism2-fr"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://geocon.com.ge/tourism2-it"/>
+        <xhtml:link rel="alternate" hreflang="ka" href="https://geocon.com.ge/tourism2-ka"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://geocon.com.ge/tourism2-ru"/>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://geocon.com.ge/tourism2-tr"/>
+
+	<!-- Добавьте x-default сюда тоже (укажите основной язык, например, английский) -->
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://geocon.com.ge/tourism2-en"/>
+    </url>
+    <url>
+        <loc>https://geocon.com.ge/tourism2-tr</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://geocon.com.ge/tourism2-en"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://geocon.com.ge/tourism2-de"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://geocon.com.ge/tourism2-es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://geocon.com.ge/tourism2-fr"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://geocon.com.ge/tourism2-it"/>
+        <xhtml:link rel="alternate" hreflang="ka" href="https://geocon.com.ge/tourism2-ka"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://geocon.com.ge/tourism2-ru"/>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://geocon.com.ge/tourism2-tr"/>
+
+	<!-- Добавьте x-default сюда тоже (укажите основной язык, например, английский) -->
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://geocon.com.ge/tourism2-en"/>
+    </url>
+
+
+	<!-- БЛОК СТРАНИЦ tourism2 -->
+    <url>
+        <loc>https://geocon.com.ge/tourism2-en</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://geocon.com.ge/tourism2-en"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://geocon.com.ge/tourism2-de"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://geocon.com.ge/tourism2-es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://geocon.com.ge/tourism2-fr"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://geocon.com.ge/tourism2-it"/>
+        <xhtml:link rel="alternate" hreflang="ka" href="https://geocon.com.ge/tourism2-ka"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://geocon.com.ge/tourism2-ru"/>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://geocon.com.ge/tourism2-tr"/>
+
+	<!-- Добавьте x-default сюда тоже (укажите основной язык, например, английский) -->
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://geocon.com.ge/tourism2-en"/>
+    </url>
+    <url>
+        <loc>https://geocon.com.ge/tourism2-de</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://geocon.com.ge/tourism2-en"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://geocon.com.ge/tourism2-de"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://geocon.com.ge/tourism2-es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://geocon.com.ge/tourism2-fr"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://geocon.com.ge/tourism2-it"/>
+        <xhtml:link rel="alternate" hreflang="ka" href="https://geocon.com.ge/tourism2-ka"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://geocon.com.ge/tourism2-ru"/>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://geocon.com.ge/tourism2-tr"/>
+
+	<!-- Добавьте x-default сюда тоже (укажите основной язык, например, английский) -->
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://geocon.com.ge/tourism2-en"/>
+    </url>
+    <url>
+        <loc>https://geocon.com.ge/tourism2-es</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://geocon.com.ge/tourism2-en"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://geocon.com.ge/tourism2-de"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://geocon.com.ge/tourism2-es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://geocon.com.ge/tourism2-fr"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://geocon.com.ge/tourism2-it"/>
+        <xhtml:link rel="alternate" hreflang="ka" href="https://geocon.com.ge/tourism2-ka"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://geocon.com.ge/tourism2-ru"/>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://geocon.com.ge/tourism2-tr"/>
+
+	<!-- Добавьте x-default сюда тоже (укажите основной язык, например, английский) -->
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://geocon.com.ge/tourism2-en"/>
+    </url>
+    <url>
+        <loc>https://geocon.com.ge/tourism2-fr</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://geocon.com.ge/tourism2-en"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://geocon.com.ge/tourism2-de"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://geocon.com.ge/tourism2-es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://geocon.com.ge/tourism2-fr"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://geocon.com.ge/tourism2-it"/>
+        <xhtml:link rel="alternate" hreflang="ka" href="https://geocon.com.ge/tourism2-ka"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://geocon.com.ge/tourism2-ru"/>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://geocon.com.ge/tourism2-tr"/>
+
+	<!-- Добавьте x-default сюда тоже (укажите основной язык, например, английский) -->
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://geocon.com.ge/tourism2-en"/>
+    </url>
+    <url>
+        <loc>https://geocon.com.ge/tourism2-it</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://geocon.com.ge/tourism2-en"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://geocon.com.ge/tourism2-de"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://geocon.com.ge/tourism2-es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://geocon.com.ge/tourism2-fr"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://geocon.com.ge/tourism2-it"/>
+        <xhtml:link rel="alternate" hreflang="ka" href="https://geocon.com.ge/tourism2-ka"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://geocon.com.ge/tourism2-ru"/>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://geocon.com.ge/tourism2-tr"/>
+
+	<!-- Добавьте x-default сюда тоже (укажите основной язык, например, английский) -->
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://geocon.com.ge/tourism2-en"/>
+    </url>
+    <url>
+        <loc>https://geocon.com.ge/tourism2-ka</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://geocon.com.ge/tourism2-en"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://geocon.com.ge/tourism2-de"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://geocon.com.ge/tourism2-es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://geocon.com.ge/tourism2-fr"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://geocon.com.ge/tourism2-it"/>
+        <xhtml:link rel="alternate" hreflang="ka" href="https://geocon.com.ge/tourism2-ka"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://geocon.com.ge/tourism2-ru"/>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://geocon.com.ge/tourism2-tr"/>
+
+	<!-- Добавьте x-default сюда тоже (укажите основной язык, например, английский) -->
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://geocon.com.ge/tourism2-en"/>
+    </url>
+    <url>
+        <loc>https://geocon.com.ge/tourism2-ru</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://geocon.com.ge/tourism2-en"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://geocon.com.ge/tourism2-de"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://geocon.com.ge/tourism2-es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://geocon.com.ge/tourism2-fr"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://geocon.com.ge/tourism2-it"/>
+        <xhtml:link rel="alternate" hreflang="ka" href="https://geocon.com.ge/tourism2-ka"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://geocon.com.ge/tourism2-ru"/>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://geocon.com.ge/tourism2-tr"/>
+
+	<!-- Добавьте x-default сюда тоже (укажите основной язык, например, английский) -->
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://geocon.com.ge/tourism2-en"/>
+    </url>
+    <url>
+        <loc>https://geocon.com.ge/tourism2-tr</loc>
+        <lastmod>2026-09-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://geocon.com.ge/tourism2-en"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://geocon.com.ge/tourism2-de"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://geocon.com.ge/tourism2-es"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://geocon.com.ge/tourism2-fr"/>
+        <xhtml:link rel="alternate" hreflang="it" href="https://geocon.com.ge/tourism2-it"/>
+        <xhtml:link rel="alternate" hreflang="ka" href="https://geocon.com.ge/tourism2-ka"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://geocon.com.ge/tourism2-ru"/>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://geocon.com.ge/tourism2-tr"/>
+
+	<!-- Добавьте x-default сюда тоже (укажите основной язык, например, английский) -->
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://geocon.com.ge/tourism2-en"/>
+    </url>
+
 
 </urlset>
