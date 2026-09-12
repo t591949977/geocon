@@ -34,7 +34,7 @@ debugger;
     const DEFAULT_LANGUAGE = 'en';
     
     // БАЗОВОЕ ИМЯ СТРАНИЦЫ (без расширения и без языка)
-    const BASE_PAGE_ID = 'index4';
+    const BASE_PAGE_ID = 'tourism2';
     
     // ========================================
     // КОНФИГУРАЦИЯ СТРАНИЦ
