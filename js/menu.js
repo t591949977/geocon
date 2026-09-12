@@ -55,7 +55,7 @@ debugger;
 	},
 
 	{
-            id: 'index4',
+            id: 'tourism2',
             titles: {
                 de: 'Die Saison der strengen Mäntel, voluminösen Schals und strukturierten Strickwaren.',
                 en: 'The season of tailored coats, oversized scarves, and textured knitwear',
@@ -152,10 +152,10 @@ debugger;
             fileName = 'index.html';
         }
         
-        // Если это index.html → заменяем на index4-en.html
+        // Если это index.html → заменяем на tourism2-en.html
         if (fileName === 'index.html') {
-            console.log('🔄 Обнаружен index.html → заменяем на index4-en.html');
-            fileName = 'index4-en.html';
+            console.log('🔄 Обнаружен index.html → заменяем на tourism2-en.html');
+            fileName = 'tourism2-en.html';
         }
         
         return fileName;
@@ -167,14 +167,14 @@ debugger;
     function getCurrentLanguage() {
         const fileName = getFileNameFromUrl();
         
-        // 1. Проверяем стандартный формат: index4-en.html
+        // 1. Проверяем стандартный формат: tourism2-en.html
         for (let lang of AVAILABLE_LANGUAGES) {
             if (fileName.includes('-' + lang + '.')) {
                 return lang;
             }
         }
         
-        // 2. Проверяем без расширения: index4-en
+        // 2. Проверяем без расширения: tourism2-en
         for (let lang of AVAILABLE_LANGUAGES) {
             if (fileName.endsWith('-' + lang)) {
                 return lang;
@@ -221,11 +221,11 @@ debugger;
     // ПОЛУЧЕНИЕ ИМЕНИ ФАЙЛА ПО ID СТРАНИЦЫ И ЯЗЫКУ
     // ============================================
     function getFileName(pageId, lang) {
-        // Если это базовая страница (index4) и английский → index-en.html
+        // Если это базовая страница (tourism2) и английский → index-en.html
         if (pageId === BASE_PAGE_ID && lang === DEFAULT_LANGUAGE) {
-            return 'index4-en.html';
+            return 'tourism2-en.html';
         }
-        // Если это базовая страница (index4) и НЕ английский → index4-de.html
+        // Если это базовая страница (tourism2) и НЕ английский → tourism2-de.html
         if (pageId === BASE_PAGE_ID) {
             return pageId + '-' + lang + '.html';
         }
