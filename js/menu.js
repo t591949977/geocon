@@ -41,6 +41,20 @@ debugger;
     // ========================================
     const pagesConfig = [
         {
+    id: 'tourism2',
+    titles: {
+        de: 'Urlaub, ohne unnötige Sorgen — Viator',
+        en: 'Vacation, without unnecessary worries — Viator',
+        es: 'Vacaciones, sin preocupaciones innecesarias — Viator',
+        fr: 'Vacances, sans soucis inutiles — Viator',
+        it: 'Vacanza, senza inutili preoccupazioni — Viator',
+        ka: 'შვებულება, ზედმეტი საზრუნავის გარეშე — Viator',
+        ru: 'Отпуск, без лишних забот — Viator',
+        tr: 'Tatil, gereksiz endişeler olmadan — Viator'
+    }
+	},
+
+	{
             id: 'index4',
             titles: {
                 de: 'Die Saison der strengen Mäntel, voluminösen Schals und strukturierten Strickwaren.',
