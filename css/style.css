@@ -264,9 +264,10 @@ body {
 }
 
 .text-center {
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* ============================================
@@ -292,13 +293,14 @@ body {
 }
 
 .column-header {
-    font-weight: 600;
-    font-size: 16px;
-    color: #1a1a2e;
-    padding-bottom: 12px;
-    border-bottom: 2px solid #e8e8e8;
-    margin-bottom: 12px;
-    flex-shrink: 0;
+	font-weight: 600;
+	font-size: 16px;
+	color: #1a1a2e;
+	padding-bottom: 12px;
+	border-bottom: 2px solid #e8e8e8;
+	margin-bottom: 12px;
+	flex-shrink: 0;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .column-scroll {
