@@ -377,12 +377,158 @@ body {
    МОБИЛЬНАЯ ВЕРСИЯ (≤ 768px)
    ============================================ */
 @media (max-width: 768px) {
-    /* ---------- МЕНЮ ---------- */
+    /* ---------- СКРЫВАЕМ ДЕСКТОПНОЕ МЕНЮ ---------- */
     .vertical-menu {
         display: none !important;
     }
+
+    /* ---------- ПОКАЗЫВАЕМ МОБИЛЬНУЮ ПАНЕЛЬ ---------- */
     .mobile-language-selector {
-        display: flex !important;
+        display: block !important;
+        padding: 0;
+        background: #e8e8e8;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    /* ---------- ВЕРХНЯЯ ПАНЕЛЬ ---------- */
+    .mobile-top-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px 10px;
+        gap: 8px;
+        background: #e8e8e8;
+        position: relative;
+    }
+
+    /* ---------- ЦЕНТРАЛЬНЫЙ ЗАГОЛОВОК ---------- */
+    .mobile-center-title {
+        flex: 1;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        color: #333333;
+        letter-spacing: 1px;
+    }
+
+    /* ---------- ВЫПАДАЮЩИЕ МЕНЮ ---------- */
+    .mobile-dropdown {
+        position: relative;
+        flex-shrink: 0;
+    }
+
+    .mobile-dropdown-btn {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: 8px 10px;
+        border: 2px solid rgba(0,0,0,0.15);
+        border-radius: 8px;
+        background: #ffffff;
+        color: #333333;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+    }
+
+    .mobile-dropdown-btn:hover,
+    .mobile-dropdown-btn:active {
+        border-color: #b8a88a;
+        background: #f5f0eb;
+    }
+
+    .mobile-icon {
+        font-size: 16px;
+    }
+
+    .mobile-current {
+        font-size: 13px;
+        font-weight: 700;
+        color: #555;
+    }
+
+    .mobile-arrow {
+        font-size: 14px;
+        color: #888;
+        transition: transform 0.3s ease;
+        margin-left: 2px;
+    }
+
+    /* ---------- ВЫПАДАЮЩИЙ СПИСОК ---------- */
+    .mobile-dropdown-content {
+        display: none;
+        position: absolute;
+        top: calc(100% + 5px);
+        min-width: 200px;
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        z-index: 200;
+        overflow: hidden;
+        max-height: 60vh;
+        overflow-y: auto;
+    }
+
+    .mobile-lang-dropdown .mobile-dropdown-content {
+        left: 0;
+    }
+
+    .mobile-page-dropdown .mobile-dropdown-content {
+        right: 0;
+    }
+
+    .mobile-dropdown-content.show {
+        display: block;
+    }
+
+    /* ---------- ПУНКТ ВЫПАДАЮЩЕГО СПИСКА ---------- */
+    .mobile-dropdown-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 16px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        border-bottom: 1px solid #f0f0f0;
+        font-size: 15px;
+        color: #333;
+    }
+
+    .mobile-dropdown-item:last-child {
+        border-bottom: none;
+    }
+
+    .mobile-dropdown-item:hover {
+        background: #f5f0eb;
+    }
+
+    .mobile-dropdown-item.active {
+        background: #e8e8e8;
+        font-weight: 700;
+        color: #222;
+    }
+
+    .mobile-item-code {
+        font-size: 13px;
+        font-weight: 700;
+        color: #888;
+        min-width: 28px;
+    }
+
+    .mobile-dropdown-item.active .mobile-item-code {
+        color: #4a9eff;
+    }
+
+    .mobile-item-name {
+        flex: 1;
+        word-wrap: break-word;
+        white-space: normal;
+        line-height: 1.3;
     }
 
     /* ---------- ТЕЛО ---------- */
@@ -395,34 +541,31 @@ body {
     /* ---------- ОСНОВНОЙ КОНТЕНТ ---------- */
     .main-content {
         padding: 10px 12px 30px 12px;
-        min-height: 100vh;
+        min-height: calc(100vh - 60px);
         height: auto;
         overflow-y: visible;
         display: flex;
         flex-direction: column;
     }
 
-    /* ---------- ПОКАЗЫВАЕМ ЗАГОЛОВОК ---------- */
+    /* ---------- СКРЫВАЕМ ЗАГОЛОВОК СТРАНИЦЫ ---------- */
     .main-content h1 {
-        display: block !important;
-        font-size: 24px;
-        margin-bottom: 15px;
-        flex-shrink: 0;
+        display: none !important;
     }
 
     /* ---------- КОЛОНКИ ---------- */
     .columns-container {
         display: flex !important;
         flex-direction: column;
-        gap: 20px;                /* Отступ между колонками */
-        height: auto !important;   /* Автоматическая высота */
+        gap: 20px;
+        height: auto !important;
         min-height: 0 !important;
         width: 100%;
         padding: 0;
         margin: 0;
     }
 
-    /* ---------- ПОКАЗЫВАЕМ ВСЕ КОЛОНКИ ---------- */
+    /* ---------- ВСЕ КОЛОНКИ ---------- */
     .column-card:nth-child(1),
     .column-card:nth-child(2),
     .column-card:nth-child(3) {
@@ -430,32 +573,30 @@ body {
         flex-direction: column;
         width: 100% !important;
         max-width: 100% !important;
-        height: auto !important;          /* Автоматическая высота */
+        height: auto !important;
         min-height: 0 !important;
-        max-height: none !important;      /* Убираем ограничение высоты */
+        max-height: none !important;
         margin: 0;
         padding: 16px 18px;
         border-radius: 12px;
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
         background: white;
-        overflow: visible;                /* Убираем скрытие переполнения */
+        overflow: visible;
         flex-shrink: 0;
     }
 
     /* ---------- 2-я КОЛОНКА (первая сверху) ---------- */
     .column-card:nth-child(2) {
-        order: -1;                        /* Поднимаем наверх */
+        order: -1;
         border: 2px solid #e8e8e8;
     }
 
-    /* ---------- 1-я КОЛОНКА (вторая сверху) ---------- */
     .column-card:nth-child(1) {
-        order: 0;                         /* Естественный порядок */
+        order: 0;
     }
 
-    /* ---------- 3-я КОЛОНКА (третья сверху) ---------- */
     .column-card:nth-child(3) {
-        order: 1;                         /* Опускаем вниз */
+        order: 1;
     }
 
     /* ---------- ЗАГОЛОВОК КОЛОНКИ ---------- */
@@ -471,12 +612,11 @@ body {
         font-size: 18px;
         line-height: 1.6;
         padding-right: 0;
-        flex: 0 1 auto;                  /* Не растягивается, только по контенту */
-        overflow: visible !important;    /* Убираем прокрутку */
+        flex: 0 1 auto;
+        overflow: visible !important;
         height: auto !important;
         min-height: 0 !important;
         max-height: none !important;
-        color: #555657;
     }
 
     /* ---------- ТАБЛИЦА ---------- */
@@ -502,7 +642,6 @@ body {
         height: auto;
     }
 
-    /* ---------- ССЫЛКИ ---------- */
     .column-table a {
         font-size: 18px;
     }

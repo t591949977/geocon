@@ -20,7 +20,7 @@
     function checkWidthAndRebuild() {
         const wasMobile = window._isMobile;
         const nowMobile = isMobile();
-debugger; 
+        
         if (wasMobile !== nowMobile) {
             window._isMobile = nowMobile;
             menuBuilt = false;
@@ -41,20 +41,19 @@ debugger;
     // ========================================
     const pagesConfig = [
         {
-    id: 'tourism2',
-    titles: {
-        de: 'Urlaub, ohne unnötige Sorgen — Viator',
-        en: 'Vacation, without unnecessary worries — Viator',
-        es: 'Vacaciones, sin preocupaciones innecesarias — Viator',
-        fr: 'Vacances, sans soucis inutiles — Viator',
-        it: 'Vacanza, senza inutili preoccupazioni — Viator',
-        ka: 'შვებულება, ზედმეტი საზრუნავის გარეშე — Viator',
-        ru: 'Отпуск, без лишних забот — Viator',
-        tr: 'Tatil, gereksiz endişeler olmadan — Viator'
-    }
-	},
-
-	{
+            id: 'tourism2',
+            titles: {
+                de: 'Urlaub, ohne unnötige Sorgen — Viator',
+                en: 'Vacation, without unnecessary worries — Viator',
+                es: 'Vacaciones, sin preocupaciones innecesarias — Viator',
+                fr: 'Vacances, sans soucis inutiles — Viator',
+                it: 'Vacanza, senza inutili preoccupazioni — Viator',
+                ka: 'შვებულება, ზედმეტი საზრუნავის გარეშე — Viator',
+                ru: 'Отпуск, без лишних забот — Viator',
+                tr: 'Tatil, gereksiz endişeler olmadan — Viator'
+            }
+        },
+        {
             id: 'index4',
             titles: {
                 de: 'Die Saison der strengen Mäntel, voluminösen Schals und strukturierten Strickwaren.',
@@ -80,35 +79,32 @@ debugger;
                 tr: 'Yaz modası, ağırlıksız kumaşlarda ifade edilen bir hafiflik manifestosudu'
             }
         },
-	{
+        {
             id: 'index5',
-	    titles: {
-	de: 'Reise mit uns um die ganze Welt.',
-	en: 'Travel with us around the world.',
-	es: 'Viaja con nosotros por todo el mundo.',
-	fr: 'Voyagez avec nous à travers le monde.',
-	it: 'Viaggia con noi in tutto il mondo.',
-	ka: 'იმოგზაურე ჩვენთან ერთად მთელს მსოფლიოში.',
-	ru: 'Путешествуй с нами по всему миру.',
-	tr: 'Bizimle dünyayı dolaş.'
-	}
-	},
-
-	{
+            titles: {
+                de: 'Reise mit uns um die ganze Welt.',
+                en: 'Travel with us around the world.',
+                es: 'Viaja con nosotros por todo el mundo.',
+                fr: 'Voyagez avec nous à travers le monde.',
+                it: 'Viaggia con noi in tutto il mondo.',
+                ka: 'იმოგზაურე ჩვენთან ერთად მთელს მსოფლიოში.',
+                ru: 'Путешествуй с нами по всему миру.',
+                tr: 'Bizimle dünyayı dolaş.'
+            }
+        },
+        {
             id: 'youtube',
-	    titles: {
-	de: 'Willkommen auf meinem YouTube-Kanal.',
-	en: 'Welcome to my YouTube channel.',
-	es: 'Bienvenido a mi canal de YouTube.',
-	fr: 'Bienvenue sur ma chaîne YouTube.',
-	it: 'Benvenuto sul mio canale YouTube.',
-	ka: 'მოგესალმებით ჩემს YouTube არხზე.',
-	ru: 'Добро пожаловать на мой YouTube-канал.',
-	tr: 'YouTube kanalıma hoş geldiniz.'
-	}
-	},
-
-
+            titles: {
+                de: 'Willkommen auf meinem YouTube-Kanal.',
+                en: 'Welcome to my YouTube channel.',
+                es: 'Bienvenido a mi canal de YouTube.',
+                fr: 'Bienvenue sur ma chaîne YouTube.',
+                it: 'Benvenuto sul mio canale YouTube.',
+                ka: 'მოგესალმებით ჩემს YouTube არხზე.',
+                ru: 'Добро пожаловать на мой YouTube-канал.',
+                tr: 'YouTube kanalıma hoş geldiniz.'
+            }
+        },
         {
             id: 'index2',
             titles: {
@@ -134,6 +130,18 @@ debugger;
         ka: 'ქართული',
         ru: 'Русский',
         tr: 'Türkçe'
+    };
+
+    // Короткие коды языков (2 буквы)
+    const languageShortCodes = {
+        de: 'DE',
+        en: 'EN',
+        es: 'ES',
+        fr: 'FR',
+        it: 'IT',
+        ka: 'KA',
+        ru: 'RU',
+        tr: 'TR'
     };
 
     // ============================================
@@ -167,21 +175,18 @@ debugger;
     function getCurrentLanguage() {
         const fileName = getFileNameFromUrl();
         
-        // 1. Проверяем стандартный формат: tourism2-en.html
         for (let lang of AVAILABLE_LANGUAGES) {
             if (fileName.includes('-' + lang + '.')) {
                 return lang;
             }
         }
         
-        // 2. Проверяем без расширения: tourism2-en
         for (let lang of AVAILABLE_LANGUAGES) {
             if (fileName.endsWith('-' + lang)) {
                 return lang;
             }
         }
         
-        // 3. Проверяем последнюю часть пути
         const pathParts = window.location.pathname.split('/');
         const lastPart = pathParts[pathParts.length - 1];
         for (let lang of AVAILABLE_LANGUAGES) {
@@ -190,14 +195,12 @@ debugger;
             }
         }
         
-        // 4. Проверяем параметр lang в URL (?lang=de)
         const urlParams = new URLSearchParams(window.location.search);
         const langParam = urlParams.get('lang');
         if (langParam && AVAILABLE_LANGUAGES.includes(langParam)) {
             return langParam;
         }
         
-        // 5. Если ничего не найдено — язык по умолчанию
         return DEFAULT_LANGUAGE;
     }
 
@@ -221,15 +224,12 @@ debugger;
     // ПОЛУЧЕНИЕ ИМЕНИ ФАЙЛА ПО ID СТРАНИЦЫ И ЯЗЫКУ
     // ============================================
     function getFileName(pageId, lang) {
-        // Если это базовая страница (tourism2) и английский → index-en.html
         if (pageId === BASE_PAGE_ID && lang === DEFAULT_LANGUAGE) {
             return 'tourism2-en.html';
         }
-        // Если это базовая страница (tourism2) и НЕ английский → tourism2-de.html
         if (pageId === BASE_PAGE_ID) {
             return pageId + '-' + lang + '.html';
         }
-        // Для всех остальных страниц — добавляем язык
         return pageId + '-' + lang + '.html';
     }
 
@@ -237,6 +237,135 @@ debugger;
         const page = pagesConfig.find(p => p.id === pageId);
         if (!page) return pageId;
         return page.titles[lang] || page.titles[DEFAULT_LANGUAGE] || pageId;
+    }
+
+    // ============================================
+    // СОЗДАНИЕ МОБИЛЬНОЙ ПАНЕЛИ
+    // (НОВАЯ ФУНКЦИЯ — НЕ ТРОГАЕТ ДЕСКТОП)
+    // ============================================
+    function buildMobilePanel() {
+        const currentLang = getCurrentLanguage();
+        const currentPage = getCurrentPage();
+
+        const mobileContainer = document.getElementById('mobileLanguageSelector');
+        if (!mobileContainer) {
+            console.warn('⚠️ Контейнер #mobileLanguageSelector не найден');
+            return;
+        }
+
+        let html = `
+            <div class="mobile-top-bar">
+                <!-- ЛЕВО: Выбор языка -->
+                <div class="mobile-dropdown mobile-lang-dropdown">
+                    <button class="mobile-dropdown-btn" id="mobileLangBtn" type="button">
+                        <span class="mobile-icon">🌐</span>
+                        <span class="mobile-current">${languageShortCodes[currentLang]}</span>
+                        <span class="mobile-arrow">▼</span>
+                    </button>
+                    <div class="mobile-dropdown-content" id="mobileLangContent">
+                        ${AVAILABLE_LANGUAGES.map(lang => `
+                            <div class="mobile-dropdown-item ${lang === currentLang ? 'active' : ''}" 
+                                 data-lang="${lang}">
+                                <span class="mobile-item-code">${languageShortCodes[lang]}</span>
+                                <span class="mobile-item-name">${languageNames[lang]}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+
+                <!-- ЦЕНТР: Надпись "Menu" -->
+                <div class="mobile-center-title">Menu</div>
+
+                <!-- ПРАВО: Выбор страницы -->
+                <div class="mobile-dropdown mobile-page-dropdown">
+                    <button class="mobile-dropdown-btn" id="mobilePageBtn" type="button">
+                        <span class="mobile-icon">📄</span>
+                        <span class="mobile-current">${languageShortCodes[currentLang]}</span>
+                        <span class="mobile-arrow">▼</span>
+                    </button>
+                    <div class="mobile-dropdown-content" id="mobilePageContent">
+                        ${pagesConfig.map(page => `
+                            <div class="mobile-dropdown-item ${page.id === currentPage ? 'active' : ''}" 
+                                 data-page="${page.id}">
+                                <span class="mobile-item-code">📄</span>
+                                <span class="mobile-item-name">${getPageTitle(page.id, currentLang)}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            </div>
+        `;
+
+        mobileContainer.innerHTML = html;
+
+        // ---------- ОБРАБОТЧИКИ ----------
+
+        const langBtn = document.getElementById('mobileLangBtn');
+        const langContent = document.getElementById('mobileLangContent');
+        const pageBtn = document.getElementById('mobilePageBtn');
+        const pageContent = document.getElementById('mobilePageContent');
+
+        // 1. Открытие/закрытие меню ЯЗЫКОВ
+        if (langBtn && langContent) {
+            langBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (pageContent) pageContent.classList.remove('show');
+                langContent.classList.toggle('show');
+            });
+        }
+
+        // 2. Открытие/закрытие меню СТРАНИЦ
+        if (pageBtn && pageContent) {
+            pageBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (langContent) langContent.classList.remove('show');
+                pageContent.classList.toggle('show');
+            });
+        }
+
+        // 3. Клик по языку
+        if (langContent) {
+            const langItems = langContent.querySelectorAll('.mobile-dropdown-item');
+            langItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const newLang = this.dataset.lang;
+                    const currentPageId = getCurrentPage();
+                    let newFileName = getFileName(currentPageId, newLang);
+                    window.location.href = newFileName;
+                });
+            });
+        }
+
+        // 4. Клик по странице
+        if (pageContent) {
+            const pageItems = pageContent.querySelectorAll('.mobile-dropdown-item');
+            pageItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const pageId = this.dataset.page;
+                    const currentLang = getCurrentLanguage();
+                    let fileName = getFileName(pageId, currentLang);
+                    window.location.href = fileName;
+                });
+            });
+        }
+
+        // 5. Закрытие при клике вне меню
+        document.addEventListener('click', function() {
+            if (langContent) langContent.classList.remove('show');
+            if (pageContent) pageContent.classList.remove('show');
+        });
+
+        // 6. Не закрывать при клике внутри
+        if (langContent) {
+            langContent.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        }
+        if (pageContent) {
+            pageContent.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        }
     }
 
     // ---------- ОБНОВЛЕНИЕ МОБИЛЬНОГО ВЫБОРА ЯЗЫКА ----------
@@ -254,21 +383,24 @@ debugger;
     function buildMenu() {
         if (menuBuilt) {
             return;
-
         }
 
         const mobile = isMobile();
 
         if (mobile) {
+            // На мобильных — строим мобильную панель
             const menuContainer = document.getElementById('menuContainer');
             if (menuContainer) {
                 menuContainer.innerHTML = '';
             }
-            updateMobileLanguageSelector();
+            buildMobilePanel();
             menuBuilt = true;
             return;
         }
 
+        // ============================================
+        // ДЕСКТОПНОЕ МЕНЮ — НЕ ТРОГАЕМ!
+        // ============================================
         const currentLang = getCurrentLanguage();
         const currentPage = getCurrentPage();
 
